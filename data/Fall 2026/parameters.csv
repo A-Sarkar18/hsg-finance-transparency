@@ -1,0 +1,13 @@
+parameter,value
+"Total budget ($), incl. dedicated reserve",20000
+Flat pool ($),5000
+"Large-share review threshold ($), advisory, does not clip",1800
+Programmatic food cap (share of event budget),0.6
+Weight: Financial Stewardship,0.3
+Weight: Collaboration & Inclusion,0.25
+Weight: Impact,0.45
+Flexible pool ($),15000
+Flat per on-time applicant ($),208.3333333
+Weight check (must equal 1),1
+Social event HSG ceiling ($ per event),400
+"Reserve ($), dedicated budget line on top of distributable pool; enforcement recoveries credited (§8)",0

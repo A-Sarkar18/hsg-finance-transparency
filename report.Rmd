@@ -1,0 +1,141 @@
+---
+title: '<img src="images/hsg-logo.png" class="title-logo" alt="HSG logo"><span>Harris Student Government Finance Committee Transparency Report</span>'
+pagetitle: "Harris Student Government Finance Committee Transparency Report"
+output:
+  html_document:
+    css: style.css
+    toc: true
+    toc_float: true
+params:
+  quarter: "Fall 2026"
+  quarter_order: 5
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE, dpi = 150, fig.width = 10)
+source("report.R")
+quarter <- params$quarter
+q <- load_quarter(quarter)
+a <- q$allocations
+fs <- q$food
+p <- q$parameters
+budget <- param(p, "Total budget")
+allocated <- sum(a$allocated, na.rm = TRUE)
+applicants <- sum(a$status == "Applied")
+requested <- sum(a$requested, na.rm = TRUE)
+flat_each <- param(p, "Flat per on-time applicant")
+flex_pool <- param(p, "Flexible pool")
+food_cap <- param(p, "Programmatic food cap")
+social_cap <- param(p, "Social event HSG ceiling")
+w_stew <- param(p, "Weight: Financial Stewardship")
+w_collab <- param(p, "Weight: Collaboration")
+w_impact <- param(p, "Weight: Impact")
+notes_file <- file.path("notes", paste0(quarter, ".md"))
+```
+
+### *`r quarter`*
+
+## At a glance
+
+<div class="callouts">
+  <div class="callout">Budget<br><span class="callout-text">`r dollars(budget)`</span></div>
+  <div class="callout">Allocated<br><span class="callout-text">`r dollars(allocated)`</span></div>
+  <div class="callout">Total requested<br><span class="callout-text">`r dollars(requested)`</span></div>
+  <div class="callout">HSOs that applied<br><span class="callout-text">`r applicants`</span></div>
+  <div class="callout">Events reviewed<br><span class="callout-text">`r sum(fs$events)`</span></div>
+</div>
+
+The Finance Committee of Harris Student Government (HSG) allocates funding to Harris Student Organizations (HSOs) each quarter. This report shows what every HSO asked for, what it received, and why, so any student can check the decisions. Requests this quarter totaled `r dollars(requested)` against a `r dollars(budget)` budget, so the committee could fund about `r percent(allocated / requested)` of what was asked.
+
+## Our approach
+
+The HSG Finance Committee exists to help HSOs turn the diversity, curiosity, and creativity of the Keller Center into real impact. That includes culture, art, and civic engagement. Policy doesn't happen in a vacuum. It grows out of how we work, study, and celebrate together.
+
+Each committee member reviews roughly 120 events per quarter, and we evaluate every one on its merits. Some judgment is unavoidable, so we want to be clear about what we weigh:
+
+* **Who it serves:** the specific community the event is designed for
+* **What it aims to achieve:** its intended outcomes for that community
+* **Why it matters:** how meaningfully it serves the people it's built for
+
+We score impact holistically, not by size alone. Events designed for smaller communities are valued just as much as large ones when they serve their audience well.
+
+Our goal is to channel that creativity into tangible benefits for Harris students today and to build an open, curious, evidence-driven culture that carries forward to future cohorts.
+
+## How funding works
+
+Every allocation has two parts:
+
+* **Flat share:** 25% of the budget is split equally among every HSO that applied on time, `r dollars(flat_each)` each this quarter.
+* **Flexible share:** the remaining `r dollars(flex_pool)` is split in proportion to each HSO's **committee score × eligible request**.
+
+**Eligible request** is what an HSO asked for, minus food spending above these limits:
+
+| Event type | What it means | What HSG covers |
+|---|---|---|
+| Cultural | The food or cultural practice *is* the event | All food |
+| Programmatic | A speaker, panel, training or service event that would happen without food | Food up to `r percent(food_cap)` of the event budget |
+| Social | The gathering itself is the point (mixers, pub nights, outings) | Up to `r dollars(social_cap)` per event, times the number of confirmed co-hosting HSOs |
+
+**Committee score** is the average of each reviewer's score plus one automatic score computed from the application. Every reviewer scores three areas from 1 to 5, weighted `r percent(w_stew)` Financial Stewardship, `r percent(w_collab)` Collaboration & Inclusion and `r percent(w_impact)` Impact. Reviewers recuse themselves from HSOs they belong to. See [METHODOLOGY.md](https://github.com/A-Sarkar18/hsg-finance-transparency/blob/main/METHODOLOGY.md) for a summary of the rules and formulas, and the [policy documents](https://github.com/A-Sarkar18/hsg-finance-transparency/tree/main/policy) for the full Fall 2026 policy.
+
+No HSO can receive more than its flat share plus its eligible request, and allocations are rounded to the nearest $10. Any change the committee makes by hand is listed with its written justification in the table at the end.
+
+## Allocations
+
+```{r, fig.height = 8}
+plot_allocations(a)
+```
+
+## What drove the allocations
+
+Higher-scoring applications tended to receive a larger share of their eligible request. Smaller requests also score higher on this measure, because the equal flat share is a bigger part of them.
+
+```{r, fig.height = 5.5}
+plot_score_share(a)
+```
+
+Rollover and outside funds lower an HSO's automatic Financial Stewardship score. The chart shows each HSO's balance relative to its request against the share it received.
+
+```{r, fig.height = 5.5}
+plot_rollover(a)
+```
+
+## Food and event rules
+
+Of `r dollars(sum(fs$food))` in food requested across `r sum(fs$events)` events, `r dollars(sum(fs$excluded))` fell outside the limits above and was left out of eligible requests. HSOs can still spend on it, using rollover, RSO funds or sponsors.
+
+```{r, fig.height = 3.5}
+plot_food(fs)
+```
+
+## Compared with past quarters
+
+```{r, fig.height = 5}
+h <- history_with_current(quarter, a, params$quarter_order)
+plot_history_totals(h)
+```
+
+```{r, fig.height = 7}
+plot_history_clubs(h, funded(a)$org)
+```
+
+```{r, results = "asis"}
+if (file.exists(notes_file)) cat(readLines(notes_file), sep = "\n")
+```
+
+## Policy documents
+
+The committee's Fall 2026 policy documents, to read online or download:
+
+* **Allocation Policy and Methodology:** the full rules, formulas and parameters. [Read online](https://github.com/A-Sarkar18/hsg-finance-transparency/blob/main/policy/Fall%202026%20Allocation%20Policy%20and%20Methodology.md) · [Download (Word)](https://github.com/A-Sarkar18/hsg-finance-transparency/blob/main/policy/Fall%202026%20Allocation%20Policy%20and%20Methodology.docx?raw=true)
+* **One-Page Guide for HSOs:** how funding works, on one page. [Read online](https://github.com/A-Sarkar18/hsg-finance-transparency/blob/main/policy/Fall%202026%20Funding%20-%20One-Page%20Guide%20for%20HSOs.md) · [Download (Word)](https://github.com/A-Sarkar18/hsg-finance-transparency/blob/main/policy/Fall%202026%20Funding%20-%20One-Page%20Guide%20for%20HSOs.docx?raw=true)
+* **Scoring README and Reviewer Manual:** how reviewers score applications. [Read online](https://github.com/A-Sarkar18/hsg-finance-transparency/blob/main/policy/Fall%202026%20Scoring%20README%20and%20Reviewer%20Manual.md) · [Download (Word)](https://github.com/A-Sarkar18/hsg-finance-transparency/blob/main/policy/Fall%202026%20Scoring%20README%20and%20Reviewer%20Manual.docx?raw=true)
+
+## Appendix: allocations by HSO
+
+```{r}
+knitr::kable(allocation_table(a), align = "lrrrrrrrrl", na = "")
+```
+
+
+<p class="footer">Data and code: <a href="https://github.com/A-Sarkar18/hsg-finance-transparency">github.com/A-Sarkar18/hsg-finance-transparency</a>. Adapted from the <a href="https://github.com/notkarenyi/hsg-fc">HSG Finance Committee transparency report</a> by Karen Yi.</p>

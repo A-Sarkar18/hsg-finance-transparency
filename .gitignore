@@ -1,0 +1,10 @@
+# Raw workbooks contain individual reviewer scores and comments
+data/raw/
+
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+*.Rproj
+.DS_Store
+*_files/
