@@ -6,7 +6,7 @@ Harris Student Government · Finance Committee · Fall 2026
 
 **1. Map of the Scoring tab**
 
-Each row is a club. Reviewer blocks run left to right: Reviewer 1 in columns B to D, Reviewer 2 in E to G, Reviewers 3 to 5 in H to P. Each block holds three integer scores: Stewardship, Collaboration, Impact. Justification text sits in columns Q and R. Columns S to W compute each reviewer's weighted score (0.30 Stew + 0.25 Collab + 0.45 Impact). Column AB is the Committee Score (Results column D must read this column; recheck it whenever columns are added or moved): the average of all completed reviewer columns plus the objective scorer. Columns X to AA are the objective scorer: Stewardship and Collaboration computed by published formula, Impact from expected attendance, combined in AA as one voice with the same standing as a human reviewer.
+Each row is a club. Reviewer blocks run left to right: Reviewer 1 in columns B to D, Reviewer 2 in E to G, Reviewers 3 to 5 in H to P. Each block holds three integer scores: Stewardship, Collaboration, Impact. Justification text sits in columns Q to U. Columns V to Z compute each reviewer's weighted score (0.30 Stew + 0.25 Collab + 0.45 Impact). Column AE is the Committee Score (Results column D must read this column; recheck it whenever columns are added or moved): the average of all completed reviewer columns plus the objective scorer. Columns AA to AD are the objective scorer: Stewardship and Collaboration computed by published formula, Impact from expected attendance, combined in AD as one voice with the same standing as a human reviewer.
 
 Grey rows are non-applicants: they receive no scores and no money. A fully blank reviewer block on an applicant row is a recusal and simply drops out of the average.
 
@@ -26,13 +26,13 @@ Same discipline on the Events sheet: type the event name, category (dropdown), b
 
 **3. How to read a completed reviewer block**
 
-**Stewardship cells reading =X.** Where a cell contains a formula pointing at column X, that reviewer adopted the objective rollover-discipline score as their own judgment. Read it as: I reviewed the balance and ask, and I agree with the formula. Where a typed number differs from X, that is a deliberate override, and the justification column says why.
+**Stewardship cells reading =AA.** Where a cell contains a formula pointing at column AA, that reviewer adopted the objective rollover-discipline score as their own judgment. Read it as: I reviewed the balance and ask, and I agree with the formula. Where a typed number differs from AA, that is a deliberate override, and the justification column says why.
 
 **Collaboration overrides.** Some entries predate the automatic HSO Fair credit and were entered by hand for that reason. The formula now grants Fair credit automatically, so score Collaboration on verified joint events only and let the machine handle the Fair.
 
 **Blanks.** A fully blank block on an applicant row means a conflict of interest: the reviewer belongs to, submitted for, or leads that club and has recused. Blanks are correct and must stay blank. A half-filled block (some bins scored, others empty) counts as nothing: the sheet requires all three bins or none, so complete it or clear it.
 
-**Justifications.** Columns Q and R hold one short paragraph per club: the evidence for the score, not a restatement of it. Follow the same pattern; a stranger reading only the justification should be able to guess the score within a point.
+**Justifications.** Columns Q to U hold one short paragraph per club: the evidence for the score, not a restatement of it. Follow the same pattern; a stranger reading only the justification should be able to guess the score within a point.
 
 **4. Scoring instructions, step by step**
 
@@ -42,7 +42,7 @@ Same discipline on the Events sheet: type the event name, category (dropdown), b
 
 **3.** Enter whole numbers 1 to 5 in all three bins, against the rubric anchors on the Main tab. The scale starts at 1; there is no zero.
 
-**4.** Stewardship: start from the objective score in column X, then ask what the formula cannot see: is the itemization complete (tie-out zero), is the ask sized to the gap, is a large balance earmarked in writing, is one line item devouring the budget? Agree with X or override it, but own the number either way.
+**4.** Stewardship: start from the objective score in column AA, then ask what the formula cannot see: is the itemization complete (tie-out zero), is the ask sized to the gap, is a large balance earmarked in writing, is one line item devouring the budget? Agree with AA or override it, but own the number either way.
 
 **5.** Collaboration: count only verified joint events (both clubs list it, or written confirmation). Declared or potential partnerships do not count. External partners (a nonprofit, another division) inform Impact, not Collaboration. The HSO Fair credit is automatic; do not add it yourself.
 

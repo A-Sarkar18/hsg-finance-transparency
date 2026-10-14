@@ -78,7 +78,7 @@ Every allocation has two parts:
 
 **Committee score** is the average of each reviewer's score plus one automatic score computed from the application. Every reviewer scores three areas from 1 to 5, weighted `r percent(w_stew)` Financial Stewardship, `r percent(w_collab)` Collaboration & Inclusion and `r percent(w_impact)` Impact. Reviewers recuse themselves from HSOs they belong to. See [METHODOLOGY.md](https://github.com/A-Sarkar18/hsg-finance-transparency/blob/main/METHODOLOGY.md) for a summary of the rules and formulas, and the [policy documents](https://github.com/A-Sarkar18/hsg-finance-transparency/tree/main/policy) for the full Fall 2026 policy.
 
-No HSO can receive more than its flat share plus its eligible request, and allocations are rounded to the nearest $10. Any change the committee makes by hand is listed with its written justification in the table at the end.
+No HSO can receive more than its flat share plus its eligible request, and allocations are rounded to the nearest $10. Any change the committee makes by hand is marked with a short note in the table at the end.
 
 ## Allocations
 

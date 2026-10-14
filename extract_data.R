@@ -8,6 +8,9 @@
 #                                         it is kept in data/raw/<quarter> events.csv, which is git-ignored)
 #         data/<quarter>/parameters.csv   budget, pools, weights, food limits
 #
+# Committee adjustments are published with the short note in notes/<quarter> adjustments.csv,
+# never with the workbook's internal justification text.
+#
 # Columns are found by their header text, not their letter, so inserting or
 # removing reviewer columns in the workbook does not break the extraction.
 
@@ -60,9 +63,22 @@ extract_quarter <- function(quarter) {
       flat = `Flat ($)`,
       flexible = `Flexible ($)`,
       formula_allocation = `Total Allocated ($)`,
-      allocated = `Committee Nomination ($)`,
-      override_justification = `Override justification`
+      allocated = `Committee Nomination ($)`
     )
+
+  # Public notes for committee adjustments. The workbook's internal override
+  # justifications are not published; each adjustment needs a short public note
+  # in notes/<quarter> adjustments.csv (columns: org, public_note).
+  notes_file <- file.path("notes", paste0(quarter, " adjustments.csv"))
+  public_notes <- if (file.exists(notes_file)) read_csv(notes_file, show_col_types = FALSE) else
+    tibble(org = character(), public_note = character())
+  adjusted <- results$org[!is.na(results$allocated) & results$allocated != results$formula_allocation]
+  missing <- setdiff(adjusted, public_notes$org)
+  if (length(missing)) stop("Add a public note to ", notes_file, " for: ", paste(missing, collapse = ", "))
+  results <- results %>%
+    left_join(public_notes, by = "org") %>%
+    mutate(adjustment_note = if_else(org %in% adjusted, public_note, NA_character_)) %>%
+    select(-public_note)
 
   # Scoring: committee score and the objective (automatic) reviewer only ------
   sc <- read_excel(wb, "Scoring", col_names = FALSE, .name_repair = "minimal")

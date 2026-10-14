@@ -49,5 +49,5 @@ The **committee score** is the average of every reviewer's weighted score and th
 
 ## 4. Overrides and appeals
 
-* **Overrides:** the committee may change an allocation by hand only with a written justification, which is published in the report.
+* **Overrides:** the committee may change an allocation by hand only with a written justification; each adjustment is marked in the published report.
 * **Appeals:** HSOs have 72 hours after receiving their event classifications to contest a classification, correct attendance, confirm co-hosts or update their rollover. Classifications lock after that window.

@@ -6,10 +6,10 @@ Harris Student Government · Finance Committee
 
 Every HSO that applied on time gets an equal base share (about $208 this quarter). The remaining $15,000 is split in proportion to your committee score times your eligible request. Your eligible request is what you asked for, minus food and social spending beyond the limits below. The committee can adjust any allocation, but only in writing, with the reason recorded.
 
-| Budget: $20,000 (no reserve) | Base share: ~$208 each | Competed pool: $15,000 | Requests total ~3.5x the budget |
+| Budget: $20,000 (no reserve) | Base share: ~$208 each | Competed pool: $15,000 | Requests total ~3.6x the budget |
 | --- | --- | --- | --- |
 
-**Worked example:** a club asks $2,000; food rules trim $500; eligible $1,500; at a mid-range score its share plus the base lands near $1,000, about half the ask. The pool covers about a third of total demand, so large asks typically land at 30-50%. But a club that asks only for what it needs can be funded in full: allocations never exceed your eligible request, and modest, well-itemized asks routinely hit that ceiling. Ask for your real gap and 100% is achievable; ask for everything imaginable and the average is what you get.
+**Worked example:** a club asks $2,000; food rules trim $500; eligible $1,500; at a mid-range score its share plus the base lands near $600, about 30% of the ask. The budget covers a little over a quarter of total demand, so large asks typically land at 20-40%. But a club that asks only for what it needs can be funded in full: allocations never exceed your eligible request, and modest, well-itemized asks routinely hit that ceiling. Ask for your real gap and 100% is achievable; ask for everything imaginable and the average is what you get.
 
 **The food and social limits**
 

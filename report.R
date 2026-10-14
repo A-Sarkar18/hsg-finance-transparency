@@ -155,7 +155,7 @@ allocation_table <- function(a) {
       Flexible = dollars(flexible),
       Allocated = dollars(allocated),
       `% of eligible` = if_else(is.na(pct_of_eligible), "", percent(pct_of_eligible, accuracy = 1)),
-      Note = coalesce(override_justification, if_else(status != "Applied", "No application on record", ""))
+      Note = coalesce(adjustment_note, if_else(status != "Applied", "No application on record", ""))
     )
 }
 
