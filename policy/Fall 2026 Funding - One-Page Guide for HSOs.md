@@ -29,11 +29,11 @@ The committee scores each club (not each event) from 1-5 on three things: Financ
 
 | Itemize every dollar: amounts you request but never itemize do not count toward your eligible request | Date every event: Fall funding covers Fall events; Winter/Spring events apply in their own cycles |
 | --- | --- |
-| Fill in expected attendance per event (ranges are fine): missing numbers score at the floor | Keep HarrisHub up to date: we use your HarrisHub balance, so file reimbursements promptly and ask only for your gap |
+| Fill in expected attendance per event (ranges are fine): missing numbers score at the floor | Keep HarrisHub up to date: we use your HarrisHub balance as rollover. Sponsor-restricted money? List it with proof |
 | Confirm co-hosts in BOTH applications: unconfirmed partnerships earn no stacking | Ask HSG for your funding gap, not your full event cost, when sponsors or RSO cover part |
 
 **Your rights and what to do now**
 
-Within 72 hours of receiving your event classifications you may: contest any classification (decided by committee vote, resolution recorded either way); correct attendance figures; confirm co-hosts; and update your rollover. Then classifications lock, scoring proceeds, and allocations publish with every override justified in writing. Late? File within the same 72-hour window and you are honored in full, identical rules (current balance required); after it, next cycle. There is no reserve this quarter: the full $20,000 is distributed to HSOs. Full methodology and the allocation workbook are available to any HSO on request.
+Within 72 hours of receiving your event classifications you may: contest any classification (decided by committee vote, resolution recorded either way); correct attendance figures; confirm co-hosts; and update rollover or claim earmarks. Then classifications lock, scoring proceeds, and allocations publish with every override justified in writing. Late? File within the same 72-hour window and you are honored in full, identical rules (current balance required); after it, next cycle. There is no reserve this quarter: the full $20,000 is distributed to HSOs. Full methodology and the allocation workbook are available to any HSO on request.
 
 *Key dates: classifications sent [date] · contest window closes [date+72h] · allocations published [date] · Questions: Finance Committee Chair*

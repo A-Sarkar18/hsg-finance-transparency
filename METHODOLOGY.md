@@ -41,13 +41,26 @@ Each reviewer scores each HSO from 1 (weak) to 5 (excellent) in three areas:
 
 An **automatic reviewer** scores every HSO from its own application data and counts as one voice:
 
-* Stewardship = 5 − 4 × (rollover ÷ request), between 1 and 5. Rollover is each HSO's HarrisHub "Available" balance on the date allocations are calculated, so every club is measured from the same source.
+* Stewardship = 5 − 4 × (rollover ÷ request), between 1 and 5. Rollover is each HSO's HarrisHub "Available" balance on the date allocations are calculated, less any approved earmarked funds (section 4), so every club is measured from the same source.
 * Collaboration = 1 with no declared collaborations, otherwise (collaborations + 2), up to 5; the HSO Fair counts as one
 * Impact = 1 + 4 × (expected attendees ÷ 300), up to 5
 
 The **committee score** is the average of every reviewer's weighted score and the automatic reviewer's weighted score. Reviewers recuse themselves from HSOs they belong to.
 
-## 4. Overrides and appeals
+## 4. Rollover and earmarked funds
+
+The committee treats an HSO's full HarrisHub "Available" balance as rollover that can go toward its events. An HSO can ask to have part of that balance set aside only if the money is restricted by someone outside the HSO:
+
+* **External restriction:** a sponsor, donor or grant gave the money for a specific purpose or event.
+* **Prior commitment:** a signed contract, deposit or invoice for a specific expense that isn't yet a pending expense in HarrisHub.
+
+To claim it, list each earmarked amount in the application with its **source, the purpose it's restricted to, and documentation** (a sponsor email, agreement or invoice). Approved amounts are left out of rollover when Financial Stewardship is scored.
+
+**What doesn't count:** money the HSO plans to save for its own purposes, such as an end-of-year event or a future quarter. Pending expenses already shown in HarrisHub don't count either, because the "Available" balance already subtracts them.
+
+Earmarked money must be spent on its stated purpose. Any of it still unspent at the next allocation counts as regular rollover.
+
+## 5. Overrides and appeals
 
 * **Overrides:** the committee may change an allocation by hand only with a written justification; each adjustment is marked in the published report.
-* **Appeals:** HSOs have 72 hours after receiving their event classifications to contest a classification, correct attendance, confirm co-hosts or update their rollover. Classifications lock after that window.
+* **Appeals:** HSOs have 72 hours after receiving their event classifications to contest a classification, correct attendance, confirm co-hosts, update their rollover or claim earmarked funds. Classifications lock after that window.

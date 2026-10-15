@@ -27,7 +27,8 @@ Requests were about **3.6×** the budget, so every HSO received part of what it 
 2. **The rest is shared by score.** The other $15,000 is split in proportion to each HSO's **committee score × eligible request**.
 3. **Real people score every application.** Committee members score Thoughtful budgeting (30%), Inclusion & collaboration (25%) and Impact (45%) from 1 to 5. One automatic score from the application data is added as one more voice. Small communities count just as much as large ones.
 4. **Food limits set the eligible request.** Cultural events: all food is covered. Programmatic events: food up to 60% of the event budget. Social events: up to $400 per co-hosting HSO.
-5. **Nobody gets more than they can use.** Allocations are capped at base share + eligible request and rounded to the nearest $10.
+5. **Rollover counts, unless it's earmarked.** Your HarrisHub "Available" balance is your rollover. Only money restricted by an outside sponsor, donor or grant, or committed under a signed contract, is set aside, and only with proof.
+6. **Nobody gets more than they can use.** Allocations are capped at base share + eligible request and rounded to the nearest $10.
 
 Full details: [Methodology summary](METHODOLOGY.md) · [Allocation Policy](policy/Fall%202026%20Allocation%20Policy%20and%20Methodology.md) · [Scoring README and Reviewer Manual](policy/Fall%202026%20Scoring%20README%20and%20Reviewer%20Manual.md)
 
@@ -91,7 +92,7 @@ You need R with the `tidyverse`, `readxl` and `rmarkdown` packages.
 ## Data notes
 
 * Renamed HSOs are matched to their current names: Unum → Agora, RAC → RPD, HE&EA → HEEA, ACPSF → ACPF.
-* Rollover is each HSO's HarrisHub "Available" balance on the day allocations were calculated.
+* Rollover is each HSO's HarrisHub "Available" balance on the day allocations were calculated, less any earmarked funds the committee approved.
 * Fall 2024 includes a separate special-allocation round (`round = Special`). Records for Fall 2025 and Winter 2026 aren't included yet.
 
 ## Credit

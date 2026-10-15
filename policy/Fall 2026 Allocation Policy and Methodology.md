@@ -57,7 +57,20 @@ A club's eligible request is its stated allocation request minus policy exclusio
 
 where Excluded is the sum of per-event exclusions under §4–5. The proration ensures a club that itemizes full event costs while requesting only HSG's share is not penalized on money it never asked HSG to pay.
 
-Rollover and external funds are treated as the presumed funder of everything HSG does not cover: excluded amounts and the unfunded remainder of any request are backstopped by the club's own balances pro rata, and how a club deploys its rollover across its events is entirely the club's decision. The committee records each club's total balance for reviewer context (including an informational column on the Events sheet) but never assigns rollover to specific events and never reduces an allocation by netting a balance against it; balances influence funding only through the Stewardship score in §7.2. For Fall 2026, each HSO’s balance is taken from its HarrisHub “Available” balance on October 13, 2026, so every club is measured the same way and from the same source.
+Rollover and external funds are treated as the presumed funder of everything HSG does not cover: excluded amounts and the unfunded remainder of any request are backstopped by the club's own balances pro rata, and how a club deploys its rollover across its events is entirely the club's decision. The committee records each club's total balance for reviewer context (including an informational column on the Events sheet) but never assigns rollover to specific events and never reduces an allocation by netting a balance against it; balances influence funding only through the Stewardship score in §7.2. For Fall 2026, each HSO’s balance is taken from its HarrisHub “Available” balance on October 13, 2026, less any earmarked funds approved under §6.1, so every club is measured the same way and from the same source.
+
+## 6.1 Rollover and earmarked funds
+
+The committee treats an HSO’s full HarrisHub “Available” balance as rollover that can go toward its events. An HSO can ask to have part of that balance set aside only if the money is restricted by someone outside the HSO:
+
+* **External restriction:** a sponsor, donor or grant gave the money for a specific purpose or event.
+* **Prior commitment:** a signed contract, deposit or invoice for a specific expense that isn’t yet a pending expense in HarrisHub.
+
+To claim it, list each earmarked amount in the application with its **source, the purpose it’s restricted to, and documentation** (a sponsor email, agreement or invoice). Approved amounts are left out of rollover when Financial Stewardship is scored.
+
+**What doesn’t count:** money the HSO plans to save for its own purposes, such as an end-of-year event or a future quarter. Pending expenses already shown in HarrisHub don’t count either, because the “Available” balance already subtracts them.
+
+Earmarked money must be spent on its stated purpose. Any of it still unspent at the next allocation counts as regular rollover.
 
 # **7. Scoring and allocation**
 
@@ -71,7 +84,7 @@ Each reviewer will score Impact as follows: Impact should be defined by its rele
 
 Alongside the human reviewers, an automatic scorer computes objective bin scores per club from application data and participates in the committee average with the standing of one reviewer:
 
-* **Stewardship** from rollover discipline (5 at zero rollover, declining linearly to 1 where rollover equals or exceeds the request; food discipline is enforced by the §4 exclusions and is deliberately not double-counted here): 5 − 4 × (rollover ÷ request)
+* **Stewardship** from rollover discipline (rollover net of any earmarked funds approved under §6.1; 5 at zero rollover, declining linearly to 1 where rollover equals or exceeds the request; food discipline is enforced by the §4 exclusions and is deliberately not double-counted here): 5 − 4 × (rollover ÷ request)
 * **Collaboration** from verified joint events: 0 events → 1 · 1 event → 3 · 2 events → 4 · 3 or more → 5
 * **Impact**, objective component, from expected attendees (5 at 300 or more, linear below), one voice alongside the human reviewers, who score Impact subjectively per §7.1 (broad relevance to the student body, innovation, and policy orient)
 

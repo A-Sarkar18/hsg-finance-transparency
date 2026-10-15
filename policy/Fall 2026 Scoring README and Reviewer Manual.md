@@ -42,7 +42,7 @@ Same discipline on the Events sheet: type the event name, category (dropdown), b
 
 **3.** Enter whole numbers 1 to 5 in all three bins, against the rubric anchors on the Main tab. The scale starts at 1; there is no zero.
 
-**4.** Stewardship: start from the objective score in column AA, then ask what the formula cannot see: is the itemization complete (tie-out zero), is the ask sized to the gap, is a large balance earmarked in writing, is one line item devouring the budget? Agree with AA or override it, but own the number either way.
+**4.** Stewardship: start from the objective score in column AA, then ask what the formula cannot see: is the itemization complete (tie-out zero), is the ask sized to the gap, has the club documented any earmarked funds (Allocation Policy §6.1; approved amounts are already removed from rollover), is one line item devouring the budget? Agree with AA or override it, but own the number either way.
 
 **5.** Collaboration: count only verified joint events (both clubs list it, or written confirmation). Declared or potential partnerships do not count. External partners (a nonprofit, another division) inform Impact, not Collaboration. The HSO Fair credit is automatic; do not add it yourself.
 
@@ -56,7 +56,7 @@ Same discipline on the Events sheet: type the event name, category (dropdown), b
 
 Clubs, not events. The prior system scored roughly ninety events on a 0 to 100 scale per reviewer, thousands of unanchored judgments nobody could reconstruct. Scoring twenty-two clubs on three anchored bins is work a human can actually do consistently, and every number can be explained afterward.
 
-Stewardship prices the ask, not the savings. The formula is rollover divided by request: a club that saved for a documented purpose and asks only for its gap scores well; a club that asks for money it already holds scores poorly. The pool is scarce, and every dollar drawn by a club that does not need it is a dollar denied to one that does. Food discipline lives in the policy exclusions with printed receipts, so do not punish food again in this score.
+Stewardship prices the ask, not the savings. The formula is rollover divided by request: a club that asks only for its gap scores well; a club that asks for money it already holds scores poorly. Money restricted by an outside sponsor, donor or grant, or committed under a signed contract, can be set aside as an earmark (Allocation Policy §6.1); a club’s own plans to save do not count. The pool is scarce, and every dollar drawn by a club that does not need it is a dollar denied to one that does. Food discipline lives in the policy exclusions with printed receipts, so do not punish food again in this score.
 
 Collaboration requires proof. Self-declared partnership is free to claim, so only cross-confirmed joint work counts, and the Fair, which is joint by construction, counts once for everyone automatically. The ladder (1 event scores 3, two 4, three or more 5) rewards genuine partnership without letting one tabling event masquerade as a coalition.
 

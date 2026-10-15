@@ -76,7 +76,11 @@ Every allocation has two parts:
 | Programmatic | A speaker, panel, training or service event that would happen without food | Food up to `r percent(food_cap)` of the event budget |
 | Social | The gathering itself is the point (mixers, pub nights, outings) | Up to `r dollars(social_cap)` per event, times the number of confirmed co-hosting HSOs |
 
-**Committee score** is the average of each reviewer's score plus one automatic score computed from the application. Every reviewer scores three areas from 1 to 5, weighted `r percent(w_stew)` Financial Stewardship, `r percent(w_collab)` Collaboration & Inclusion and `r percent(w_impact)` Impact. Reviewers recuse themselves from HSOs they belong to. See [METHODOLOGY.md](https://github.com/A-Sarkar18/hsg-finance-transparency/blob/main/METHODOLOGY.md) for a summary of the rules and formulas, and the [policy documents](https://github.com/A-Sarkar18/hsg-finance-transparency/tree/main/policy) for the full Fall 2026 policy.
+**Committee score** is the average of each reviewer's score plus one automatic score computed from the application. Every reviewer scores three areas from 1 to 5, weighted `r percent(w_stew)` Financial Stewardship, `r percent(w_collab)` Collaboration & Inclusion and `r percent(w_impact)` Impact. Reviewers recuse themselves from HSOs they belong to.
+
+**Rollover** is each HSO's HarrisHub "Available" balance, and it counts toward the HSO's events. The only exception is money restricted by someone outside the HSO, such as a sponsor gift for one event or a signed contract, which is set aside when the HSO documents it. An HSO's own plans to save don't count.
+
+See [METHODOLOGY.md](https://github.com/A-Sarkar18/hsg-finance-transparency/blob/main/METHODOLOGY.md) for a summary of the rules and formulas, and the [policy documents](https://github.com/A-Sarkar18/hsg-finance-transparency/tree/main/policy) for the full Fall 2026 policy.
 
 No HSO can receive more than its flat share plus its eligible request, and allocations are rounded to the nearest $10. Any change the committee makes by hand is marked with a short note in the table at the end.
 
