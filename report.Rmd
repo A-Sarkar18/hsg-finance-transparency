@@ -127,6 +127,94 @@ plot_history_clubs(h, funded(a)$org)
 if (file.exists(notes_file)) cat(readLines(notes_file), sep = "\n")
 ```
 
+## FAQs
+
+#### Who reviews my HSO's allocation application?
+
+* **The HSG Finance Committee.** Five committee members each read every application and score the HSO from 1 to 5 in three areas: Financial Stewardship (`r percent(w_stew)`), Collaboration & Inclusion (`r percent(w_collab)`) and Impact (`r percent(w_impact)`).
+* **An automatic score** calculated from the application data (rollover, collaborations, expected attendance) counts as one more reviewer.
+* **Reviewers recuse themselves** from HSOs they belong to.
+* **Scoring is by HSO, not by event.** Every event is still read and classified so the food rules can be applied.
+* **The HSG Executive Board** then reviews and votes to approve each HSO's amount.
+* **Full scoring criteria:** see the [policy documents](#policy-documents).
+
+#### How is my allocation calculated?
+
+* **Equal base share:** 25% of the budget is split equally among every HSO that applied on time (`r dollars(flat_each)` each this quarter).
+* **Shared pool:** the other 75% is split in proportion to **committee score × eligible request**.
+* **Eligible request** is what the HSO asked for, minus food spending above the limits described in [How funding works](#how-funding-works).
+* **Upper limit and rounding:** no HSO gets more than its base share plus its eligible request, and amounts are rounded to the nearest $10.
+
+#### Why did my HSO get less than it asked for?
+
+* **Requests are bigger than the budget.** This quarter they totaled about `r round(requested / budget, 1)` times the budget, so every HSO received part of its request.
+* **The biggest factors** are food spending above the limits, a large rollover balance compared with the request, and few co-hosted events.
+* **The committee score** sets each HSO's share of the pool.
+
+#### Will events for smaller communities, or events without co-hosts, score lower?
+
+No. The automatic score is only one of six voices, and it can't see everything. It counts attendance and co-hosts, but it can't tell how much an event matters to the people it serves.
+
+That's what the five human reviewers are for. They score Impact by **who an event serves and how well it serves them**, not by size alone. Events for historically underrepresented communities, and policy topics that matter deeply to a smaller group, are valued as much as large events. Not every good event needs a co-host, and reviewers take that into account too.
+
+#### Does my rollover count against me?
+
+* **Yes, by default.** We use each HSO's HarrisHub "Available" balance as rollover, and a large balance compared with the request lowers the Stewardship score.
+* **Earmarked money is set aside** when the HSO documents it in its application: money restricted by a sponsor, donor or grant; money committed under a signed contract; or money saved for a specific, itemized event later in the same academic year, with its estimated cost and planned quarter.
+* **General savings don't count**, including money saved for unspecified "future events" or for after the academic year ends.
+
+#### Who decides when my HSO gets its allocation?
+
+The process involves HSO leaders, HSG and SEB (Student Engagement and Belonging):
+
+1. HSG emails HSO leaders when applications open.
+2. HSO leaders submit the application on HarrisHub by the deadline.
+3. The Finance Committee classifies every event and sends each HSO its event classifications.
+4. **HSOs have 72 hours** to contest a classification, correct attendance, confirm co-hosts, update rollover or claim earmarked funds. **This is the only chance to appeal.**
+5. The Finance Committee scores applications and sets allocation amounts.
+6. The HSG Executive Board reviews and votes to approve each amount.
+7. HSOs are emailed their final allocation amount. Amounts can't be changed after this point.
+8. HSG sends SEB the approved amounts.
+9. SEB adds the funds to each HSO's HarrisHub account.
+
+#### When does each quarter's funding arrive?
+
+| Quarter funded | Apply | Funds arrive |
+|---|---|---|
+| Fall | By June of the previous academic year | By week 2 of Fall |
+| Winter | About week 7 of Fall | Week 1 of Winter |
+| Spring | About week 7 of Winter | Week 1 of Spring |
+
+HSOs always apply the quarter before. For Fall, that means applying before summer break so funds are ready when the year starts. HSG emails exact dates each quarter.
+
+#### What if we miss the deadline?
+
+Late applications aren't guaranteed a review. Any the committee accepts receive the equal base share only.
+
+#### Is there a way to get my allocation sooner?
+
+Not really. What helps is replying quickly to the Finance Committee's email confirming your amount: the sooner HSOs respond, the sooner HSG can send the amounts to SEB.
+
+#### Where can I see every HSO's allocation?
+
+Right here. The [appendix](#appendix-allocations-by-hso) lists what each HSO requested and received.
+
+#### Who do I contact with questions?
+
+Email the Finance Committee Chair, Ayan Sarkar, at [ayansarkar18@uchicago.edu](mailto:ayansarkar18@uchicago.edu).
+
+## Meet the Finance Committee
+
+| Name | Role |
+|---|---|
+| Ayan Sarkar | Finance Committee Chair, 2026–27 |
+| Likhitha Chintareddy | Finance Committee Member |
+| Tobias Oestreich | Finance Committee Member |
+| Adlai Politi | Finance Committee Member |
+| Mike Zhao | Finance Committee Member |
+
+All five members review every application, and each recuses from HSOs they belong to.
+
 ## Policy documents
 
 The committee's Fall 2026 policy documents, to read online or download:
