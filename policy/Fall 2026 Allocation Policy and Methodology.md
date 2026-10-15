@@ -2,7 +2,7 @@ Harris Student Government · Finance Committee
 
 **Fall 2026 HSO Budget Allocation: Methodology, Policy, and Assumptions**
 
-*Draft for committee adoption, July 2026*
+*Adopted by Committee, Oct 2026*
 
 # **1. Purpose and principles**
 
