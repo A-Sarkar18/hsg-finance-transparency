@@ -27,7 +27,7 @@ Requests were about **3.6×** the budget, so every HSO received part of what it 
 2. **The rest is shared by score.** The other $15,000 is split in proportion to each HSO's **committee score × eligible request**.
 3. **Real people score every application.** Committee members score Thoughtful budgeting (30%), Inclusion & collaboration (25%) and Impact (45%) from 1 to 5. One automatic score from the application data is added as one more voice. Small communities count just as much as large ones.
 4. **Food limits set the eligible request.** Cultural events: all food is covered. Programmatic events: food up to 60% of the event budget. Social events: up to $400 per co-hosting HSO.
-5. **Rollover counts, unless it's earmarked.** Your HarrisHub "Available" balance is your rollover. Only money restricted by an outside sponsor, donor or grant, or committed under a signed contract, is set aside, and only with proof.
+5. **Rollover counts, unless it's earmarked.** Your HarrisHub "Available" balance is your rollover. Money restricted by a sponsor, donor or grant, committed under a signed contract, or saved for a specific event later in the academic year is set aside when you document or itemize it.
 6. **Nobody gets more than they can use.** Allocations are capped at base share + eligible request and rounded to the nearest $10.
 
 Full details: [Methodology summary](METHODOLOGY.md) · [Allocation Policy](policy/Fall%202026%20Allocation%20Policy%20and%20Methodology.md) · [Scoring README and Reviewer Manual](policy/Fall%202026%20Scoring%20README%20and%20Reviewer%20Manual.md)

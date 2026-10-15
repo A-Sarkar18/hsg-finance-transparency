@@ -29,7 +29,7 @@ The committee scores each club (not each event) from 1-5 on three things: Financ
 
 | Itemize every dollar: amounts you request but never itemize do not count toward your eligible request | Date every event: Fall funding covers Fall events; Winter/Spring events apply in their own cycles |
 | --- | --- |
-| Fill in expected attendance per event (ranges are fine): missing numbers score at the floor | Keep HarrisHub up to date: we use your HarrisHub balance as rollover. Sponsor-restricted money? List it with proof |
+| Fill in expected attendance per event (ranges are fine): missing numbers score at the floor | Keep HarrisHub up to date: we use your HarrisHub balance as rollover. Saving for a specific event? Itemize it to set it aside |
 | Confirm co-hosts in BOTH applications: unconfirmed partnerships earn no stacking | Ask HSG for your funding gap, not your full event cost, when sponsors or RSO cover part |
 
 **Your rights and what to do now**

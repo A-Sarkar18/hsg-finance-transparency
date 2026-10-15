@@ -61,14 +61,15 @@ Rollover and external funds are treated as the presumed funder of everything HSG
 
 ## 6.1 Rollover and earmarked funds
 
-The committee treats an HSO’s full HarrisHub “Available” balance as rollover that can go toward its events. An HSO can ask to have part of that balance set aside only if the money is restricted by someone outside the HSO:
+The committee treats an HSO’s full HarrisHub “Available” balance as rollover that can go toward its events. An HSO can ask to have part of that balance set aside as an earmark in three cases:
 
 * **External restriction:** a sponsor, donor or grant gave the money for a specific purpose or event.
 * **Prior commitment:** a signed contract, deposit or invoice for a specific expense that isn’t yet a pending expense in HarrisHub.
+* **Planned future event:** a specific event the HSO will hold later in the same academic year (through Spring Quarter), itemized in the application like a current event, with its estimated cost and planned quarter.
 
-To claim it, list each earmarked amount in the application with its **source, the purpose it’s restricted to, and documentation** (a sponsor email, agreement or invoice). Approved amounts are left out of rollover when Financial Stewardship is scored.
+To claim it, list each earmarked amount in the application with its **source, the purpose it’s restricted to, and documentation** (a sponsor email, agreement or invoice, or the itemized budget for a planned event). The amount set aside can’t exceed the documented or itemized cost. Approved amounts are left out of rollover when Financial Stewardship is scored.
 
-**What doesn’t count:** money the HSO plans to save for its own purposes, such as an end-of-year event or a future quarter. Pending expenses already shown in HarrisHub don’t count either, because the “Available” balance already subtracts them.
+**What doesn’t count:** general savings, unspecified “future events,” and spending planned after the academic year ends. Pending expenses already shown in HarrisHub don’t count either, because the “Available” balance already subtracts them.
 
 Earmarked money must be spent on its stated purpose. Any of it still unspent at the next allocation counts as regular rollover.
 

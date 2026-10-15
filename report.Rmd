@@ -78,7 +78,7 @@ Every allocation has two parts:
 
 **Committee score** is the average of each reviewer's score plus one automatic score computed from the application. Every reviewer scores three areas from 1 to 5, weighted `r percent(w_stew)` Financial Stewardship, `r percent(w_collab)` Collaboration & Inclusion and `r percent(w_impact)` Impact. Reviewers recuse themselves from HSOs they belong to.
 
-**Rollover** is each HSO's HarrisHub "Available" balance, and it counts toward the HSO's events. The only exception is money restricted by someone outside the HSO, such as a sponsor gift for one event or a signed contract, which is set aside when the HSO documents it. An HSO's own plans to save don't count.
+**Rollover** is each HSO's HarrisHub "Available" balance, and it counts toward the HSO's events. An HSO can set part of it aside as an earmark when the money is restricted by a sponsor, donor or grant, committed under a signed contract, or saved for a specific event later in the academic year that the HSO itemizes with its cost. General savings don't count.
 
 See [METHODOLOGY.md](https://github.com/A-Sarkar18/hsg-finance-transparency/blob/main/METHODOLOGY.md) for a summary of the rules and formulas, and the [policy documents](https://github.com/A-Sarkar18/hsg-finance-transparency/tree/main/policy) for the full Fall 2026 policy.
 
