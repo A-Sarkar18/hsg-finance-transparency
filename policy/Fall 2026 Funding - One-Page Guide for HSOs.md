@@ -6,7 +6,7 @@ Harris Student Government · Finance Committee
 
 Every HSO that applied on time gets an equal base share (about $208 this quarter). The remaining $15,000 is split in proportion to your committee score times your eligible request. Your eligible request is what you asked for, minus food and social spending beyond the limits below. The committee can adjust any allocation, but only in writing, with the reason recorded.
 
-| Budget: $20,000 (no reserve) | Base share: ~$208 each | Competed pool: $15,000 | Requests total ~3.6x the budget |
+| Budget: $20,000 | Base share: ~$208 each | Competed pool: $15,000 | Requests total ~3.6x the budget |
 | --- | --- | --- | --- |
 
 **Worked example:** a club asks $2,000; food rules trim $500; eligible $1,500; at a mid-range score its share plus the base lands near $600, about 30% of the ask. The budget covers a little over a quarter of total demand, so large asks typically land at 20-40%. But a club that asks only for what it needs can be funded in full: allocations never exceed your eligible request, and modest, well-itemized asks routinely hit that ceiling. Ask for your real gap and 100% is achievable; ask for everything imaginable and the average is what you get.
@@ -34,6 +34,6 @@ The committee scores each club (not each event) from 1-5 on three things: Financ
 
 **Your rights and what to do now**
 
-Within 72 hours of receiving your event classifications you may: contest any classification (decided by committee vote, resolution recorded either way); correct attendance figures; confirm co-hosts; and update rollover or claim earmarks. Then classifications lock, scoring proceeds, and allocations publish with every override justified in writing. Late? File within the same 72-hour window and you are honored in full, identical rules (current balance required); after it, next cycle. There is no reserve this quarter: the full $20,000 is distributed to HSOs. Full methodology and the allocation workbook are available to any HSO on request.
+Within 72 hours of receiving your event classifications you may: contest any classification (decided by committee vote, resolution recorded either way); correct attendance figures; confirm co-hosts; and update rollover or claim earmarks. Then classifications lock, scoring proceeds, and allocations publish with every override justified in writing. Late? File within the same 72-hour window and you are honored in full, identical rules (current balance required); after it, next cycle. Money left unallocated goes to the Emergency Reserve for HSOs, including new ones. Full methodology and the allocation workbook are available to any HSO on request.
 
 *Key dates: classifications sent [date] · contest window closes [date+72h] · allocations published [date] · Questions: Finance Committee Chair*

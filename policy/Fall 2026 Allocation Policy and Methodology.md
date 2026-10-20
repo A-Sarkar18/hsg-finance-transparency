@@ -14,11 +14,11 @@ Nothing in this framework reduces the total budget distributed to HSOs. The poli
 
 | **Parameter** | **Value** | **Basis** |
 | --- | --- | --- |
-| Total quarterly budget | $20,000 | Set by committee for Fall 2026: the full $20,000 is distributed; no reserve |
+| Total quarterly budget | $20,000 | Set by committee for Fall 2026; any amount not allocated after committee adjustments goes to the Emergency Reserve |
 | Flat pool | $5,000 | 25% of the distributable pool, split equally among on-time applicants |
 | Flat share per applicant | $208.33 | $5,000 ÷ 24 applicants; floats with applicant count |
 | Flexible pool | $15,000 | Distributable pool minus flat pool; distributed by formula (§7) |
-| Reserve | $2,000 | None this quarter. When funded, a dedicated line on top of the distributable pool for mid-quarter emergency and flagship requests (§8) |
+| Reserve | $540 | Fall 2026: the budget left unallocated after committee adjustments. Held for new HSOs and other HSO use (§8) |
 | Large-share review threshold | $1,800 | Advisory flag only; no hard per-club cap (§7) |
 | Programmatic food cap | 60% of event budget | §4 |
 | Social event ceiling | $400 per event, × co-hosting HSOs | §4 |
@@ -115,7 +115,7 @@ Two properties follow from this design and are worth stating plainly. First, pol
 
 # **8. Overrides, reserve, and audit trail**
 
-Columns from Flat through Total Allocated in the Results tab are formula-driven and are never overwritten by hand. Committee discretion is exercised in exactly one place: the Committee Nomination column, which is seeded with the formula result and may be overridden only with a written justification in the adjacent column. For Fall 2026 the committee set the reserve to $0, so the full $20,000 is distributed to HSOs. Rounding residue and enforcement recoveries (for example, unitemized request reductions not redistributed under §6 defaults) are still recorded. Any future reserve is funded as a dedicated budget line on top of the distributable pool, so it costs no club any allocation, and is drawn only by application and majority vote. Every draw and credit is recorded in the Reserve Log tab of the allocation workbook at decision time (date, club, amount, purpose, vote, justification, running balance), and the unspent balance is reported at quarter close and rolls into the next quarter budget.
+Columns from Flat through Total Allocated in the Results tab are formula-driven and are never overwritten by hand. Committee discretion is exercised in exactly one place: the Committee Nomination column, which is seeded with the formula result and may be overridden only with a written justification in the adjacent column. Any part of the quarterly budget left unallocated after committee adjustments goes to the Emergency Reserve, which is set aside for HSO use, including new HSOs that form after the application deadline. For Fall 2026 that is $540. Rounding residue and enforcement recoveries (for example, unitemized request reductions not redistributed under §6 defaults) are still recorded. Any future reserve is funded as a dedicated budget line on top of the distributable pool, so it costs no club any allocation, and is drawn only by application and majority vote. Every draw and credit is recorded in the Reserve Log tab of the allocation workbook at decision time (date, club, amount, purpose, vote, justification, running balance), and the unspent balance is reported at quarter close and rolls into the next quarter budget.
 
 # **9. Classification protocol**
 

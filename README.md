@@ -19,7 +19,7 @@ How Harris Student Government funds Harris Student Organizations (HSOs): what ea
 |:---:|:---:|:---:|:---:|:---:|
 | **$20,000** | **$19,460** | **$72,067** | **24** | **$208** each |
 
-Requests were about **3.6×** the budget, so every HSO received part of what it asked for.
+Requests were about **3.6×** the budget, so every HSO received part of what it asked for. The remaining **$540** goes to the Emergency Reserve, set aside for HSOs, including new HSOs.
 
 ## How funding works, in 30 seconds
 

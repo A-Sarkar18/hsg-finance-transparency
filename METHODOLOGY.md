@@ -63,5 +63,6 @@ Earmarked money must be spent on its stated purpose. Any of it still unspent at 
 
 ## 5. Overrides and appeals
 
+* **Unallocated money:** any part of the budget left unallocated after committee adjustments goes to the Emergency Reserve, which is set aside for HSO use, including new HSOs.
 * **Overrides:** the committee may change an allocation by hand only with a written justification; each adjustment is marked in the published report.
 * **Appeals:** HSOs have 72 hours after receiving their event classifications to contest a classification, correct attendance, confirm co-hosts, update their rollover or claim earmarked funds. Classifications lock after that window.

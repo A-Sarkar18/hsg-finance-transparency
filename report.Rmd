@@ -45,7 +45,7 @@ notes_file <- file.path("notes", paste0(quarter, ".md"))
   <div class="callout">Events reviewed<br><span class="callout-text">`r sum(fs$events)`</span></div>
 </div>
 
-The Finance Committee of Harris Student Government (HSG) allocates funding to Harris Student Organizations (HSOs) each quarter. This report shows what every HSO asked for, what it received, and why, so any student can check the decisions. Requests this quarter totaled `r dollars(requested)` against a `r dollars(budget)` budget, so the committee could fund about `r percent(allocated / requested)` of what was asked.
+The Finance Committee of Harris Student Government (HSG) allocates funding to Harris Student Organizations (HSOs) each quarter. This report shows what every HSO asked for, what it received, and why, so any student can check the decisions. Requests this quarter totaled `r dollars(requested)` against a `r dollars(budget)` budget, so the committee could fund about `r percent(allocated / requested)` of what was asked.`r if (budget - allocated > 0) paste0(' The remaining ', dollars(budget - allocated), ' goes to the Emergency Reserve, which is set aside for HSOs, including new HSOs that form during the year.') else ''`
 
 ## Our approach
 
@@ -194,6 +194,10 @@ Late applications aren't guaranteed a review. Any the committee accepts receive 
 #### Is there a way to get my allocation sooner?
 
 Not really. What helps is replying quickly to the Finance Committee's email confirming your amount: the sooner HSOs respond, the sooner HSG can send the amounts to SEB.
+
+#### What happens to money that isn't allocated?
+
+It goes to the Emergency Reserve, which is set aside for HSO use, including new HSOs that form during the year. This quarter, `r dollars(budget - allocated)` went to the reserve.
 
 #### Where can I see every HSO's allocation?
 
