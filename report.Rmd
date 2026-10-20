@@ -157,10 +157,6 @@ No. The automatic score is only one of six voices, and it can't see everything. 
 
 That's what the five human reviewers are for. They score Impact by **who an event serves and how well it serves them**, not by size alone. Events for historically underrepresented communities, and policy topics that matter deeply to a smaller group, are valued as much as large events. Not every good event needs a co-host, and reviewers take that into account too.
 
-#### Does the HSO Fair count as a collaboration?
-
-Yes. Tabling at the HSO Fair counts as one collaboration, and the credit is added automatically, so **do not add it yourself**. When you receive your event classifications, check that it was applied, and let the committee know within the 72-hour window if it wasn't.
-
 #### Does my rollover count against me?
 
 * **Yes, by default.** We use each HSO's HarrisHub "Available" balance as rollover, and a large balance compared with the request lowers the Stewardship score.
