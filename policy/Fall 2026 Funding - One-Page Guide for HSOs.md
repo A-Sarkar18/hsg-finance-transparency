@@ -19,7 +19,7 @@ Every HSO that applied on time gets an equal base share (about $208 this quarter
 | Programmatic | Speaker, panel, training, or service event that would happen even without food | Food up to 60% of the event budget |
 | Social | The gathering is the point (mixers, pub nights, bonfires, outings) | Up to $400 per event (median Harris social has cost $420-500 for three quarters, so typical socials are fully covered) |
 
-**Co-hosting bonus:** a social co-hosted by two HSOs gets double the ceiling; three get triple. Both clubs must list the event in their applications for it to count. **HSO Fair:** tabling counts as one collaboration for your score automatically, uniformly, since the Fair is joint by design; it raises no spending ceiling. **Alcohol** is fundable and counts as food; follow University policies. **No per-club cap:** strong applications can earn beyond the old $1,800 limit. Amounts we do not cover are not banned; fund them from rollover, RSO, or sponsors.
+**Co-hosting bonus:** a social co-hosted by two HSOs gets double the ceiling; three get triple. Both clubs must list the event in their applications for it to count. **HSO Fair:** tabling counts as one collaboration automatically; do not add it yourself, but check your classifications to verify it was applied. It raises no spending ceiling. **Alcohol** is fundable and counts as food; follow University policies. **No per-club cap:** strong applications can earn beyond the old $1,800 limit. Amounts we do not cover are not banned; fund them from rollover, RSO, or sponsors.
 
 **How you are scored**
 
