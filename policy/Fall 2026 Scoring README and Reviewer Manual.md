@@ -44,7 +44,7 @@ Same discipline on the Events sheet: type the event name, category (dropdown), b
 
 **4.** Stewardship: start from the objective score in column AA, then ask what the formula cannot see: is the itemization complete (tie-out zero), is the ask sized to the gap, has the club documented any earmarked funds (Allocation Policy §6.1; approved amounts are already removed from rollover), is one line item devouring the budget? Agree with AA or override it, but own the number either way.
 
-**5.** Collaboration: count only verified joint events (both clubs list it, or written confirmation). Declared or potential partnerships do not count. External partners (a nonprofit, another division) inform Impact, not Collaboration. The HSO Fair credit is automatic; do not add it yourself.
+**5.** Collaboration: count only verified joint events (both clubs list it, or written confirmation). Declared or potential partnerships do not count. External partners (a nonprofit, another division) inform Impact, not Collaboration. The HSO Fair credit is automatic; do not add it yourself, but verify it was applied. The formula only recognizes events whose name contains “Fair”, so an HSO Fair entry listed under another name (for example, “HSO Tabling Event”) gets no credit; rename the event to include “HSO Fair” instead of adjusting the score.
 
 **6.** Impact: your subjective judgment of relevance to the student body, innovation, and policy substance. The attendance-based objective Impact is the machine's separate voice; yours should weigh what attendance cannot: content, distinctiveness, who is served.
 
