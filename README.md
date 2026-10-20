@@ -17,9 +17,9 @@ How Harris Student Government funds Harris Student Organizations (HSOs): what ea
 
 | Budget | Allocated | Requested | HSOs funded | Equal base share |
 |:---:|:---:|:---:|:---:|:---:|
-| **$20,000** | **$19,460** | **$72,067** | **24** | **$208** each |
+| **$20,000** | **$19,500** | **$72,067** | **24** | **$208** each |
 
-Requests were about **3.6×** the budget, so every HSO received part of what it asked for. The remaining **$540** goes to the Emergency Reserve, set aside for HSOs, including new HSOs.
+Requests were about **3.6×** the budget, so every HSO received part of what it asked for. The remaining **$500** goes to the Emergency Reserve, set aside for HSOs, including new HSOs.
 
 ## How funding works, in 30 seconds
 
@@ -36,22 +36,22 @@ Full details: [Methodology summary](METHODOLOGY.md) · [Allocation Policy](polic
 
 | HSO | Requested | Eligible request | Committee score | Allocated | Note |
 |:---|---:|---:|:---:|---:|:---|
-| BAPPS | $8,758 | $4,444 | 4.80 | **$2,060** | |
-| TAP | $5,320 | $4,917 | 3.46 | **$1,690** | |
+| BAPPS | $8,758 | $4,444 | 4.80 | **$2,050** | |
+| TAP | $5,320 | $4,917 | 3.46 | **$1,680** | |
 | PFA | $3,600 | $3,550 | 3.65 | **$1,330** | |
 | LAM | $4,100 | $3,620 | 3.51 | **$1,310** | |
-| MASH | $3,600 | $3,140 | 4.01 | **$1,300** | |
-| MiPPS | $5,000 | $4,560 | 2.50 | **$1,220** | |
+| MASH | $3,600 | $3,140 | 4.01 | **$1,290** | |
+| MiPPS | $5,000 | $4,560 | 2.50 | **$1,210** | |
 | HEEA | $6,950 | $3,510 | 3.26 | **$1,200** | |
-| SSC | $3,550 | $3,515 | 2.65 | **$1,020** | |
-| OUTPolitik | $3,260 | $1,798 | 2.93 | **$870** | Committee adjustment: additional $200 for midterm-election programming. |
+| SSC | $3,550 | $3,515 | 2.65 | **$1,010** | |
+| OUTPolitik | $3,260 | $1,798 | 2.93 | **$870** | Committee adjustment: additional funding for midterm-election programming. |
 | UC3P | $2,789 | $2,789 | 2.44 | **$800** | |
-| SASPA | $3,000 | $2,343 | 2.27 | **$670** | |
+| SASPA | $3,000 | $2,343 | 2.77 | **$770** | |
 | PMPSA | $2,300 | $1,934 | 2.57 | **$640** | |
 | ACPF | $2,000 | $1,514 | 3.13 | **$620** | |
 | HII | $1,700 | $1,150 | 3.45 | **$550** | |
 | EPSA | $1,700 | $1,400 | 2.82 | **$550** | |
-| HNI | $1,500 | $1,244 | 2.93 | **$530** | |
+| HNI | $1,500 | $1,244 | 2.93 | **$520** | |
 | HIVE | $1,625 | $1,554 | 2.20 | **$500** | |
 | RPD | $980 | $798 | 3.91 | **$480** | |
 | WiPP | $1,700 | $1,260 | 2.52 | **$480** | |
@@ -60,7 +60,7 @@ Full details: [Methodology summary](METHODOLOGY.md) · [Allocation Policy](polic
 | Agora | $965 | $719 | 2.33 | **$350** | |
 | HCC | $750 | $400 | 2.39 | **$290** | |
 | MPP | $4,000 | $4,000 | 2.10 | **$200** | Committee adjustment. Can be revisited once an itemized event budget is submitted. |
-| **Total** | **$72,067** | **$56,075** | | **$19,460** | |
+| **Total** | **$72,067** | **$56,075** | | **$19,500** | |
 
 BEPP, HFG, HSfP did not apply this quarter. Charts, food-rule totals and comparisons with past quarters are in the [full report](https://a-sarkar18.github.io/hsg-finance-transparency/).
 
