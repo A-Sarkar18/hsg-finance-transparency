@@ -73,6 +73,7 @@ BEPP, HFG, HSfP did not apply this quarter. Charts, food-rule totals and compari
 | [`METHODOLOGY.md`](METHODOLOGY.md) | A short summary of the rules and formulas. |
 | [`data/Fall 2026/`](data/Fall%202026/) | `allocations.csv` (one row per HSO), `food_summary.csv` (totals by event type) and `parameters.csv` (budget, weights, limits). |
 | [`data/history_allocations.csv`](data/history_allocations.csv) | Requests and allocations from earlier quarters, with the source for each. |
+| [`data/history_totals.csv`](data/history_totals.csv) | Quarter totals for quarters without HSO-level records (Winter 2026). |
 | [`notes/`](notes/) | Each quarter's "what changed" text and the public notes for committee adjustments. |
 | `report.Rmd`, `report.R`, `extract_data.R`, `run.R`, `style.css` | The code that builds the report. |
 
@@ -93,7 +94,7 @@ You need R with the `tidyverse`, `readxl` and `rmarkdown` packages.
 
 * Renamed HSOs are matched to their current names: Unum → Agora, RAC → RPD, HE&EA → HEEA, ACPSF → ACPF.
 * Rollover is each HSO's HarrisHub "Available" balance on the day allocations were calculated, less any earmarked funds the committee approved.
-* Fall 2024 includes a separate special-allocation round (`round = Special`). Records for Fall 2025 and Winter 2026 aren't included yet.
+* Fall 2024 includes a separate special-allocation round (`round = Special`). Winter 2026 has quarter totals only (`data/history_totals.csv`), from that quarter's Finance Committee report. Fall 2025 records aren't included yet.
 
 ## Credit
 

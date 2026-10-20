@@ -111,9 +111,17 @@ history_with_current <- function(quarter, a, order) {
 
 plot_history_totals <- function(h) {
   d <- h %>%
-    group_by(quarter) %>%
-    summarise(Requested = sum(requested, na.rm = TRUE), Allocated = sum(allocated), .groups = "drop") %>%
-    pivot_longer(-quarter) %>%
+    group_by(quarter = as.character(quarter), quarter_order) %>%
+    summarise(Requested = sum(requested, na.rm = TRUE), Allocated = sum(allocated), .groups = "drop")
+  # Quarters where only totals are available (no HSO-level records)
+  totals_file <- file.path("data", "history_totals.csv")
+  if (file.exists(totals_file)) {
+    d <- bind_rows(d, read_csv(totals_file, show_col_types = FALSE) %>%
+                     transmute(quarter, quarter_order, Requested = requested, Allocated = allocated))
+  }
+  d <- d %>%
+    mutate(quarter = fct_reorder(quarter, quarter_order)) %>%
+    pivot_longer(c(Requested, Allocated)) %>%
     mutate(name = factor(name, c("Requested", "Allocated")))
   ggplot(d, aes(quarter, value, fill = name)) +
     geom_col(position = position_dodge(width = 0.75), width = 0.7) +
@@ -122,7 +130,8 @@ plot_history_totals <- function(h) {
     scale_fill_manual(values = c(Requested = GRAY, Allocated = MAROON)) +
     scale_y_continuous(labels = dollar, expand = expansion(mult = c(0, 0.1))) +
     labs(x = NULL, y = NULL,
-         caption = "Fall 2024 includes the special allocation round. Fall 2025 and Winter 2026 records are not in this repository.") +
+         caption = paste("Fall 2024 includes the special allocation round. Winter 2026 totals are from that quarter's",
+                         "Finance Committee report;\nHSO-level detail is not available. Fall 2025 records are not in this repository.")) +
     theme_hsg() + theme(panel.grid.major.y = element_line(), panel.grid.major.x = element_blank())
 }
 
