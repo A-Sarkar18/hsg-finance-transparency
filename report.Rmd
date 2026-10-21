@@ -129,8 +129,9 @@ plot_food(fs)
 if (!is.null(q$attendance)) {
   at <- q$attendance
   small <- sum(at$events[at$band %in% c("1-24", "25-49")])
-  cat("Most events are designed for smaller groups:", small, "of", sum(at$events),
-      "events expect fewer than 50 people.\n")
+  share <- small / sum(at$events)
+  lead <- if (share > 0.55) "Most events" else if (share >= 0.45) "About half of all events" else "Many events"
+  cat(lead, " (", small, " of ", sum(at$events), ") expect fewer than 50 people.\n", sep = "")
 }
 ```
 
