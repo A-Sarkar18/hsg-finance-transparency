@@ -280,6 +280,14 @@ All five members review every application, and each recuses from HSOs they belon
 | UC3P | University of Chicago Public Policy Podcasts |
 | WiPP | Women in Public Policy |
 
+### Viewing your submitted requests
+
+There are three ways to review requests your HSO has already submitted:
+
+1. **Direct link:** open the [submitted requests outbox](https://uchicago.presence.io/admin/forms/responses/outbox).
+2. **Through Forms:** go to the **Forms** section and select **Outbox** to see all submitted requests.
+3. **Through Event Requests:** go to the **Events** section, select the **Request** tab, then click **Requires Action** to see requests that need review.
+
 ### Suggested Vendors
 
 Please visit the direct payments page for more information on payments to vendors.
