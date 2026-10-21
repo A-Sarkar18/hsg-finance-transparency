@@ -71,7 +71,7 @@ BEPP, HFG, HSfP did not apply this quarter. Charts, food-rule totals and compari
 | [`docs/`](docs/) | The published website. `index.html` is the latest quarter. |
 | [`policy/`](policy/) | The committee's Fall 2026 policy documents, in Word and Markdown. |
 | [`METHODOLOGY.md`](METHODOLOGY.md) | A short summary of the rules and formulas. |
-| [`data/Fall 2026/`](data/Fall%202026/) | `allocations.csv` (one row per HSO), `food_summary.csv` (totals by event type) and `parameters.csv` (budget, weights, limits). |
+| [`data/Fall 2026/`](data/Fall%202026/) | `allocations.csv` (one row per HSO), `food_summary.csv` (totals by event type), `attendance_summary.csv` (events per expected-attendance band) and `parameters.csv` (budget, weights, limits). |
 | [`data/history_allocations.csv`](data/history_allocations.csv) | Requests and allocations from earlier quarters, with the source for each. |
 | [`data/history_totals.csv`](data/history_totals.csv) | Quarter totals for quarters without HSO-level records (Winter 2026). |
 | [`notes/`](notes/) | Each quarter's "what changed" text and the public notes for committee adjustments. |

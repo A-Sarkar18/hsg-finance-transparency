@@ -86,6 +86,19 @@ No HSO can receive more than its flat share plus its eligible request, and alloc
 
 ## Allocations
 
+```{r}
+ap <- filter(a, status == "Applied", requested > 0)
+top5_share <- sum(head(sort(ap$requested, decreasing = TRUE), 5)) / sum(ap$requested)
+```
+
+A few large requests drive most of the demand: the five largest requests made up `r percent(top5_share)` of all money requested this quarter.
+
+```{r, fig.height = 4}
+plot_request_sizes(a)
+```
+
+Each HSO's request, eligible request and allocation, with the share of its request that was funded:
+
 ```{r, fig.height = 8}
 plot_allocations(a)
 ```
@@ -110,6 +123,19 @@ Of `r dollars(sum(fs$food))` in food requested across `r sum(fs$events)` events,
 
 ```{r, fig.height = 3.5}
 plot_food(fs)
+```
+
+```{r, results = "asis"}
+if (!is.null(q$attendance)) {
+  at <- q$attendance
+  small <- sum(at$events[at$band %in% c("1-24", "25-49")])
+  cat("Most events are designed for smaller groups:", small, "of", sum(at$events),
+      "events expect fewer than 50 people.\n")
+}
+```
+
+```{r, fig.height = 3.5}
+if (!is.null(q$attendance)) plot_attendance(q$attendance)
 ```
 
 ## Compared with past quarters

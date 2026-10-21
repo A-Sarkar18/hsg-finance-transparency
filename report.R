@@ -27,7 +27,9 @@ load_quarter <- function(quarter) {
   list(
     allocations = read_csv(file.path(dir, "allocations.csv"), show_col_types = FALSE),
     food = read_csv(file.path(dir, "food_summary.csv"), show_col_types = FALSE),
-    parameters = read_csv(file.path(dir, "parameters.csv"), show_col_types = FALSE)
+    parameters = read_csv(file.path(dir, "parameters.csv"), show_col_types = FALSE),
+    attendance = if (file.exists(file.path(dir, "attendance_summary.csv")))
+      read_csv(file.path(dir, "attendance_summary.csv"), show_col_types = FALSE) else NULL
   )
 }
 
@@ -48,11 +50,45 @@ plot_allocations <- function(a) {
     geom_col(data = filter(d, name == "Requested"), width = 0.8) +
     geom_col(data = filter(d, name == "Eligible request"), width = 0.55) +
     geom_col(data = filter(d, name == "Allocated"), width = 0.3) +
+    geom_text(data = funded(a) %>% filter(requested > 0) %>% mutate(org = factor(org, levels(d$org))),
+              aes(requested, org, label = percent(allocated / requested, accuracy = 1)),
+              inherit.aes = FALSE, hjust = -0.2, size = 3.4, color = INK) +
     scale_fill_manual(values = c(Requested = GRAY, `Eligible request` = GOLD, Allocated = MAROON)) +
-    scale_x_continuous(labels = dollar, expand = expansion(mult = c(0, 0.05))) +
+    scale_x_continuous(labels = dollar, expand = expansion(mult = c(0, 0.09))) +
     labs(x = NULL, y = NULL,
-         caption = "Eligible request = requested amount minus food spending above the policy limits.") +
+         caption = paste("Eligible request = requested amount minus food spending above the policy limits.",
+                         "Percentages = share of the request funded.")) +
     theme_hsg()
+}
+
+# How many HSOs asked for how much, and their share of all requested dollars --
+plot_request_sizes <- function(a) {
+  d <- a %>% filter(status == "Applied", requested > 0) %>%
+    mutate(band = cut(requested, c(0, 999.99, 1999.99, 2999.99, 4999.99, Inf),
+                      labels = c("Under $1,000", "$1,000-$1,999", "$2,000-$2,999", "$3,000-$4,999", "$5,000+"))) %>%
+    group_by(band, .drop = FALSE) %>%
+    summarise(hsos = n(), dollars_requested = sum(requested), .groups = "drop") %>%
+    mutate(share = dollars_requested / sum(dollars_requested))
+  ggplot(d, aes(band, hsos)) +
+    geom_col(fill = MAROON, width = 0.7) +
+    geom_text(aes(label = paste0(hsos, " HSOs\n", percent(share, accuracy = 1), " of all requested $")),
+              vjust = -0.3, size = 3.4, lineheight = 0.9) +
+    scale_y_continuous(expand = expansion(mult = c(0, 0.35)), breaks = pretty_breaks()) +
+    labs(x = "Amount requested", y = "Number of HSOs") +
+    theme_hsg() + theme(panel.grid.major.x = element_blank())
+}
+
+# Expected attendance per event, by band ---------------------------------------
+plot_attendance <- function(at) {
+  d <- at %>% filter(events > 0 | band != "Not given") %>%
+    mutate(band = factor(band, c("1-24", "25-49", "50-99", "100-199", "200+", "Not given")))
+  ggplot(d, aes(band, events)) +
+    geom_col(fill = GOLD, width = 0.7) +
+    geom_text(aes(label = events), vjust = -0.4, size = 3.6) +
+    scale_y_continuous(expand = expansion(mult = c(0, 0.15)), breaks = pretty_breaks()) +
+    labs(x = "Expected attendees per event", y = "Number of events",
+         caption = "Attendance figures are the HSOs' own estimates from their applications.") +
+    theme_hsg() + theme(panel.grid.major.x = element_blank())
 }
 
 # Committee score vs share of eligible request funded -------------------------

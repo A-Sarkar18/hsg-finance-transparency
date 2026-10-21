@@ -7,6 +7,7 @@
 #         data/<quarter>/food_summary.csv totals by event type (event-level detail is not published;
 #                                         it is kept in data/raw/<quarter> events.csv, which is git-ignored)
 #         data/<quarter>/parameters.csv   budget, pools, weights, food limits
+#         data/<quarter>/attendance_summary.csv  events per expected-attendance band (counts only)
 #
 # Committee adjustments are published with the short note in notes/<quarter> adjustments.csv,
 # never with the workbook's internal justification text.
@@ -124,6 +125,14 @@ extract_quarter <- function(quarter) {
               food = sum(food, na.rm = TRUE),
               excluded = sum(excluded, na.rm = TRUE), .groups = "drop")
   write_csv(food_summary, file.path(out, "food_summary.csv"))
+
+  # Expected attendance per event, published only as counts per band
+  attendance_summary <- events %>%
+    mutate(band = cut(expected_attendees, c(0, 24, 49, 99, 199, Inf),
+                      labels = c("1-24", "25-49", "50-99", "100-199", "200+"))) %>%
+    mutate(band = fct_na_value_to_level(band, "Not given")) %>%
+    count(band, name = "events", .drop = FALSE)
+  write_csv(attendance_summary, file.path(out, "attendance_summary.csv"))
 
   message("Wrote ", nrow(allocations), " HSOs and ", nrow(events), " events to ", out)
   invisible(list(allocations = allocations, food_summary = food_summary, parameters = params))
