@@ -288,6 +288,10 @@ There are three ways to review requests your HSO has already submitted:
 2. **Through Forms:** go to the **Forms** section and select **Outbox** to see all submitted requests.
 3. **Through Event Requests:** go to the **Events** section, select the **Request** tab, then click **Requires Action** to see requests that need review.
 
+### Food Cost Calculator
+
+Planning food for an event? The **[HSO Food Cost Calculator](food-calculator.html)** estimates the cost of 15 Hyde Park catering packages for your headcount, and lists vendor contacts, ordering status and how to pay vendors.
+
 ### Suggested Vendors
 
 Please visit the direct payments page for more information on payments to vendors.

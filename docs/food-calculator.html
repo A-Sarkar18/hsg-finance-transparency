@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HSO Food Cost Calculator</title>
+<link rel="icon" href="images/hsg-logo.png">
+<style>
+  :root {
+    --maroon: #800000;
+    --ink: #2b2b2b;
+    --muted: #666;
+    --line: #e2d8d2;
+    --tint: #f6ece6;
+    --bg: #ffffff;
+    --good: #2e7d32;
+    --warn: #a15c00;
+    --bad: #9b1c1c;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font-family: Arial, Helvetica, sans-serif; font-size: 16px; line-height: 1.55;
+  }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 24px 16px 64px; }
+  a { color: var(--maroon); }
+  .back { font-size: 14px; }
+  header { display: flex; align-items: center; gap: 18px; margin: 16px 0 8px; }
+  header img { width: 72px; height: 72px; flex-shrink: 0; }
+  h1 { color: var(--maroon); font-size: 34px; margin: 0; line-height: 1.15; }
+  h2 { color: var(--maroon); font-size: 26px; margin: 48px 0 8px; }
+  .lead { color: var(--muted); max-width: 760px; }
+  .panel {
+    background: var(--tint); border-radius: 10px; padding: 18px 20px;
+    display: flex; flex-wrap: wrap; gap: 18px 28px; align-items: flex-end; margin: 20px 0 12px;
+  }
+  .field { display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600; }
+  .field input, .field select {
+    font: inherit; font-weight: 400; font-size: 16px; padding: 8px 10px;
+    border: 1px solid #c9b8ae; border-radius: 6px; background: #fff; min-width: 150px;
+  }
+  .field input[type=number] { width: 150px; min-width: 0; font-size: 22px; font-weight: 700; color: var(--maroon); }
+  .err { color: var(--bad); font-size: 14px; min-height: 1em; }
+  .stats { display: flex; flex-wrap: wrap; gap: 12px; margin: 8px 0 20px; }
+  .stat { border: 1px solid var(--line); border-radius: 10px; padding: 12px 16px; min-width: 170px; }
+  .stat b { display: block; font-size: 24px; color: var(--maroon); }
+  .stat span { font-size: 13px; color: var(--muted); }
+  .note { font-size: 14px; color: var(--muted); }
+  .alert { border-left: 4px solid var(--maroon); background: #fff7f3; padding: 10px 14px; margin: 12px 0; font-size: 15px; }
+  .tablewrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 10px; }
+  table { border-collapse: collapse; width: 100%; font-size: 15px; }
+  th, td { padding: 10px 12px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--line); }
+  th { background: #faf6f3; font-size: 13px; color: #555; white-space: nowrap; }
+  th.sort { cursor: pointer; user-select: none; }
+  th.sort:hover { color: var(--maroon); }
+  th .arrow { font-size: 11px; }
+  td.num, th.num { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
+  tr:last-child td { border-bottom: 0; }
+  tbody tr:hover { background: #fcf8f6; }
+  .pkg { font-weight: 600; }
+  .sub { display: block; color: var(--muted); font-size: 13px; font-weight: 400; margin-top: 2px; }
+  .big { font-weight: 700; }
+  .perhead { display: inline-block; padding: 2px 8px; border-radius: 999px; font-weight: 700; font-size: 14px; }
+  .lo { background: #e8f3e9; color: var(--good); }
+  .mid { background: #fdf1df; color: var(--warn); }
+  .hi { background: #fbe6e6; color: var(--bad); }
+  .badge { display: inline-block; padding: 2px 8px; border-radius: 999px; font-size: 12px; font-weight: 700; white-space: nowrap; }
+  .b-ok { background: #e8f3e9; color: var(--good); }
+  .b-quote { background: #fdf1df; color: var(--warn); }
+  .b-check { background: #eee; color: #555; }
+  .legend { display: flex; flex-wrap: wrap; gap: 14px; font-size: 13px; color: var(--muted); margin: 8px 0; }
+  details { margin: 6px 0; }
+  summary { cursor: pointer; color: var(--maroon); font-weight: 600; }
+  ul.pay { padding-left: 20px; }
+  footer { margin-top: 56px; font-size: 13px; color: var(--muted); border-top: 1px solid var(--line); padding-top: 16px; }
+  @media (max-width: 600px) {
+    h1 { font-size: 26px; }
+    header img { width: 56px; height: 56px; }
+    .hide-sm { display: none; }
+    th, td { padding: 8px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="index.html#resources">&larr; Back to the Transparency Report</a>
+  <header>
+    <img src="images/hsg-logo.png" alt="HSG logo">
+    <h1>HSO Food Cost Calculator</h1>
+  </header>
+  <p class="lead">Enter your expected headcount to see how much each Hyde Park food package would cost. Each estimate orders whole units and respects the vendor's minimum order. Use it to plan the food line in your HSG funding application.</p>
+
+  <div class="panel">
+    <label class="field">Expected headcount
+      <input id="n" type="number" min="1" step="1" value="25" inputmode="numeric">
+    </label>
+    <label class="field">Cuisine
+      <select id="cuisine"><option value="">All cuisines</option></select>
+    </label>
+    <label class="field">Sort by
+      <select id="sortsel">
+        <option value="perhead">Cost per attendee (low to high)</option>
+        <option value="total">Food subtotal (low to high)</option>
+        <option value="vendor">Vendor (A to Z)</option>
+      </select>
+    </label>
+    <div class="err" id="err" role="alert"></div>
+  </div>
+
+  <div class="stats" id="stats"></div>
+
+  <div class="alert"><b>Before you order:</b> these are food subtotals at published prices. Add tax, delivery, service fees and tip, and confirm capacity with the vendor. Vendors cannot be paid by Zelle or Venmo.</div>
+
+  <div class="legend">
+    <span><span class="perhead lo">$</span> $12 or less per attendee</span>
+    <span><span class="perhead mid">$</span> $12 to $20</span>
+    <span><span class="perhead hi">$</span> over $20</span>
+  </div>
+
+  <div class="tablewrap">
+    <table>
+      <thead>
+        <tr>
+          <th class="sort" data-k="vendor">Vendor and package <span class="arrow"></span></th>
+          <th class="num">Order</th>
+          <th class="num hide-sm">Portions</th>
+          <th class="num sort" data-k="total">Food subtotal <span class="arrow"></span></th>
+          <th class="num sort" data-k="perhead">Per attendee <span class="arrow"></span></th>
+        </tr>
+      </thead>
+      <tbody id="rows"></tbody>
+    </table>
+  </div>
+  <p class="note">Portions are the number of servings the order covers, which can be more than your headcount when a vendor sells by the tray or has a minimum. Click a package for pricing notes and the menu source.</p>
+
+  <h2>How this fits your HSG application</h2>
+  <ul>
+    <li><b>Cultural events:</b> HSG can cover all food costs.</li>
+    <li><b>Programmatic events:</b> food is covered up to 60% of the event budget.</li>
+    <li><b>Social events:</b> HSG covers up to $400 for each co-hosting HSO.</li>
+  </ul>
+  <p>See <a href="index.html#food-and-event-rules">Food and event rules</a> in the Transparency Report for details.</p>
+
+  <h2 id="directory">Vendor directory</h2>
+  <p class="lead">Contact details and ordering status for Hyde Park vendors, reviewed November 16, 2026. Vendors marked <span class="badge b-quote">Quote needed</span> do not publish prices, so ask for an itemized quote at your final RSVP count.</p>
+  <div class="panel" style="margin-top:12px">
+    <label class="field">Search vendors
+      <input id="q" type="search" placeholder="Name or cuisine" style="min-width:220px">
+    </label>
+    <label class="field" style="flex-direction:row;align-items:center;gap:8px;font-weight:400">
+      <input id="pricedonly" type="checkbox" style="min-width:0"> Only vendors with published prices
+    </label>
+  </div>
+  <div class="tablewrap">
+    <table>
+      <thead><tr><th>Vendor</th><th>Status</th><th class="hide-sm">Address</th><th>Phone</th></tr></thead>
+      <tbody id="vrows"></tbody>
+    </table>
+  </div>
+  <p class="note" id="closednote"></p>
+
+  <h2>Paying vendors</h2>
+  <ul class="pay">
+    <li>For Harris funds, confirm the payment route with <a href="https://harris.uchicago.edu/student-life/student-engagement-belonging">Student Engagement &amp; Belonging</a>. Ask the vendor for an itemized written quote and invoice terms before committing.</li>
+    <li>University <a href="https://leadership.uchicago.edu/registered-student-organizations/your-rso-financial-account/payments-university-checks/">direct payments</a> by check take about two weeks to process. Confirm this applies to your Harris account.</li>
+    <li>For authorized <a href="https://intranet.uchicago.edu/tools-and-resources/tools-and-applications/gems">GEMS</a> purchases, use the designated payer and keep the itemized receipt.</li>
+    <li>One order per shared event. Collect dietary needs before the order cutoff and ask the vendor to label dishes separately.</li>
+  </ul>
+
+  <footer>Harris Student Government Finance Committee. Prices are from each vendor's published menu as of November 2026 and may change. This page is a planning tool, not a quote or a funding commitment.</footer>
+</div>
+
+<script>
+const DATA = {"packages": [{"code": "CED-TACO", "vendor": "Cedars Mediterranean Kitchen", "order": "Shawarma taco bar with rice and toppings", "unit": "buffet servings", "serves": 1.0, "price": 14.0, "min": 8.0, "note": "Published catering. Add $4 per person for vendor’s drink-and-dessert option.", "src": "https://www.eatcedars.com/catering", "cuisine": "Mediterranean"}, {"code": "CED-FAL", "vendor": "Cedars Mediterranean Kitchen", "order": "Falafel bowls with rice, flatbread and cauliflower", "unit": "bowls", "serves": 1.0, "price": 12.0, "min": 1.0, "note": "Published catering. Confirm group minimum and ingredients.", "src": "https://www.eatcedars.com/catering", "cuisine": "Mediterranean"}, {"code": "CED-FEAST", "vendor": "Cedars Mediterranean Kitchen", "order": "Shawarma, kebobs and four sides", "unit": "buffet servings", "serves": 1.0, "price": 19.95, "min": 1.0, "note": "Published catering. Confirm group minimum and menu.", "src": "https://www.eatcedars.com/catering", "cuisine": "Mediterranean"}, {"code": "MED-PIZZA", "vendor": "Medici on 57th", "order": "Family thin-crust spinach, onion and mushroom pizzas", "unit": "family pizzas", "serves": 5.0, "price": 29.95, "min": 1.0, "note": "Toast lists $29.95. The published catering serving range is 5–6. Uses five for planning.", "src": "https://order.toasttab.com/online/medici-on-57th", "cuisine": "Italian-American"}, {"code": "GIO-PASTA", "vendor": "Giordano’s", "order": "Rigatoni marinara trays", "unit": "trays", "serves": 8.0, "price": 39.6, "min": 1.0, "note": "Vendor lists 8–10. Uses eight as an entrée planning basis. Consider a side or protein separately.", "src": "https://giordanos.com/tr-catering-menu/", "cuisine": "Pizza and Italian"}, {"code": "RAJ-CHKN", "vendor": "Rajun Cajun", "order": "Two-piece fried chicken dinner with side and muffin", "unit": "dinners", "serves": 1.0, "price": 8.99, "min": 1.0, "note": "Published retail menu price. Confirm bulk order and alternative meals.", "src": "https://www.rajuncajunhp.com/menu", "cuisine": "Indian and Southern"}, {"code": "T55-NOOD", "vendor": "Thai 55 Restaurant", "order": "Tofu or chicken fried rice", "unit": "entrées", "serves": 1.0, "price": 14.5, "min": 1.0, "note": "Published retail price. Confirm group capacity and dietary requirements.", "src": "https://thai55chicago.com/chicago-thai-55-food-menu", "cuisine": "Thai"}, {"code": "CAP-PENNE", "vendor": "Pizza Capri", "order": "Popeye Penne catering pans", "unit": "pans", "serves": 6.0, "price": 63.0, "min": 1.0, "note": "Published ordering-platform price. Confirm delivery charges and dietary fit.", "src": "https://www.ezcater.com/catering/pizza-capri-chicago", "cuisine": "Pizza and Italian"}, {"code": "NIL-FAL", "vendor": "The Nile Restaurant", "order": "Falafel sandwich lunchbox with chips, hummus, pita and dessert", "unit": "boxes", "serves": 1.0, "price": 14.0, "min": 20.0, "note": "Minimum 20 boxes and five per style. Ask for vegan dates where needed.", "src": "https://www.nilehydepark.com/catering", "cuisine": "Middle Eastern"}, {"code": "NIL-SHAW", "vendor": "The Nile Restaurant", "order": "Chicken shawerma sandwich lunchbox with sides and dessert", "unit": "boxes", "serves": 1.0, "price": 15.0, "min": 20.0, "note": "Minimum 20 boxes and five per style. Confirm box mix if ordering multiple styles.", "src": "https://www.nilehydepark.com/catering", "cuisine": "Middle Eastern"}, {"code": "NOO-PAD", "vendor": "Noodles Etc.", "order": "Pad Thai catering portions", "unit": "portions", "serves": 1.0, "price": 12.95, "min": 10.0, "note": "Ordering-platform price. Minimum 10 for the item. Confirm protein and utensil costs.", "src": "https://www.ezcater.com/catering/noodles-etc-3", "cuisine": "Pan-Asian"}, {"code": "PIC-PENNE", "vendor": "Piccolo Mondo Café", "order": "Penne with broccoli entrées", "unit": "entrées", "serves": 1.0, "price": 19.75, "min": 1.0, "note": "Published retail price. Confirm pickup capacity and accompaniments.", "src": "https://piccolomondo.com/-food-menu?destination=food_menu", "cuisine": "Italian"}, {"code": "CAF-SAND", "vendor": "Café 53", "order": "Assorted half-size sandwich trays", "unit": "trays", "serves": 8.0, "price": 69.99, "min": 1.0, "note": "Vendor listing says serves 8–10. Uses eight. Confirm assortment and entrée-size servings.", "src": "https://www.chownow.com/order/16661/locations/23696", "cuisine": "Sandwiches and café"}, {"code": "CAF-FRUIT", "vendor": "Café 53", "order": "Half fruit tray for a snack break", "unit": "trays", "serves": 8.0, "price": 45.99, "min": 1.0, "note": "Serves 8–10. Uses eight. Order at least two days ahead per ordering menu.", "src": "https://www.chownow.com/order/16661/locations/23696", "cuisine": "Sandwiches and café"}, {"code": "CAF-EGG", "vendor": "Café 53", "order": "Egg and vegetable breakfast sandwiches", "unit": "sandwiches", "serves": 1.0, "price": 5.46, "min": 1.0, "note": "Published ordering-platform breakfast price. Confirm time window and bulk capacity.", "src": "https://www.chownow.com/order/16661/locations/23696", "cuisine": "Sandwiches and café"}], "vendors": [{"vendor": "Cedars Mediterranean Kitchen", "cuisine": "Mediterranean", "address": "1206 E 53rd St", "phone": "773-324-6227", "status": "Published catering", "notes": "Hyde Park delivery 7% and 24 hours’ notice. Confirm dietary substitutions.", "site": "https://www.eatcedars.com/catering", "order": null, "pdf": null}, {"vendor": "Maravilla’s", "cuisine": "Mexican", "address": "5506 S Lake Park Ave", "phone": "773-643-3155", "status": "Quote required", "notes": "Official site advertises catering and lists this phone. Ask for a taco buffet with rice and beans.", "site": "https://www.maravillas-restaurant.com/", "order": null, "pdf": null}, {"vendor": "Medici on 57th", "cuisine": "Italian-American", "address": "1327 E 57th St", "phone": "773-667-7394", "status": "Published catering", "notes": "24-hour minimum. Delivery $4 plus 20% handling. Pickup 10%. Ask about house account.", "site": "https://www.medici57.com/catering", "order": "https://order.toasttab.com/online/medici-on-57th", "pdf": "https://www.medici57.com/s/Medici-Catering-Menu-2026-2027.pdf"}, {"vendor": "Good Earth Catering", "cuisine": "Full-service catering", "address": "3931 S Leavitt St", "phone": "773-893-0093", "status": "Verify availability", "notes": "Supplied site inaccessible. Confirm operations and request a boxed-lunch quote.", "site": "http://www.goodearthchicago.com/", "order": "https://reviews.birdeye.com/good-earth-catering-171076172196977", "pdf": null}, {"vendor": "Giordano’s", "cuisine": "Pizza and Italian", "address": "5311 S Blackstone Ave", "phone": "773-947-0200", "status": "Published catering", "notes": "Hyde Park page links the catering PDF. Call for location-specific deep-dish prices and servings.", "site": "https://giordanos.com/locations/hyde-park/", "order": null, "pdf": "https://giordanos.com/tr-catering-menu/"}, {"vendor": "Rajun Cajun", "cuisine": "Indian and Southern", "address": "1459 E 53rd St", "phone": "773-955-1145", "status": "Published retail menu", "notes": "Confirm large-order capacity and substitutions. Vendor identifies its meat as halal.", "site": "https://www.rajuncajunhp.com/menu", "order": null, "pdf": null}, {"vendor": "Pho 55", "cuisine": "Vietnamese", "address": "1611 E 55th St", "phone": "773-363-1515", "status": "Quote required", "notes": "Restaurant ordering page found. Ask for individually packed bánh mì or rice entrées and confirm the group rate.", "site": "https://www.pho55.com/", "order": "https://orderstart.com/pho55", "pdf": null}, {"vendor": "The Sit Down Café & Sushi Bar", "cuisine": "Sandwiches and sushi", "address": "1312 E 53rd St", "phone": "773-324-3700", "status": "Current price unverified", "notes": "Current catering link is broken. An older PDF remains online. Confirm current prices directly.", "site": "https://thesitdowncafe.com/", "order": null, "pdf": "https://thesitdowncafe.com/wp-content/uploads/2024/07/Catering-Menu-2022.pdf"}, {"vendor": "The Snail Thai Cuisine", "cuisine": "Thai", "address": "1649 E 55th St", "phone": "773-667-5423", "status": "Starting price only", "notes": "Published Pad Thai menu lists a starting price that varies with selection.", "site": "https://www.snailthai.com/", "order": null, "pdf": "https://snailthai.com/snailmenu.pdf"}, {"vendor": "Thai 55 Restaurant", "cuisine": "Thai", "address": "1607 E 55th St", "phone": "773-363-7119", "status": "Published retail menu", "notes": "Tofu and chicken fried rice have the same posted price. Request catering tray pricing separately.", "site": "https://thai55chicago.com/", "order": "https://thai55chicago.com/chicago-thai-55-food-menu", "pdf": null}, {"vendor": "Pizza Capri", "cuisine": "Pizza and Italian", "address": "1501 E 53rd St", "phone": "773-324-7777", "status": "Public catering listing", "notes": "Published ordering-platform prices. Delivery minimum $175 and listed fee $20. Direct catering: https://hydeparkcatering.pizzacapri.com/", "site": "https://hydeparkcatering.pizzacapri.com/", "order": "https://www.ezcater.com/catering/pizza-capri-chicago", "pdf": null}, {"vendor": "Mellow Yellow", "cuisine": "American", "address": "1508 E 53rd St", "phone": "773-667-2000", "status": "Closed", "notes": "Reported closed. Excluded from ordering.", "site": null, "order": "https://chicagomaroon.com/40274/news/hyde-park-faces-gentrification-waves-as-long-time-businesses-close-and-new-ones-emerge/", "pdf": null}, {"vendor": "Pockets", "cuisine": "Sandwiches and salads", "address": "1307 E 53rd St", "phone": "773-667-1313", "status": "Hyde Park location unverified", "notes": "Vendor site lists 3001 N Lincoln Ave, 773-528-2167. Check campus delivery from that branch before requesting a quote.", "site": "https://www.pocketsonline.com/", "order": null, "pdf": null}, {"vendor": "A10 Hyde Park", "cuisine": "Italian", "address": "1642 E 53rd St", "phone": "773-288-1010", "status": "Closed", "notes": "Original location closed. Closure report identifies the former address as 1462 E 53rd St.", "site": "https://www.a10hydepark.com/", "order": "https://chicago.eater.com/2018/7/2/17526800/a10-matthias-merges-hyde-park-restaurant-shutter-closed", "pdf": null}, {"vendor": "The Nile Restaurant", "cuisine": "Middle Eastern", "address": "1162 E 55th St", "phone": "773-324-9499", "status": "Published catering", "notes": "Boxed lunches have a 20-box minimum and five per style. Ask for vegan dessert and separate labels as needed.", "site": "https://www.nilehydepark.com/catering", "order": null, "pdf": "https://www.nilehydepark.com/_files/ugd/ee6cb4_d0bb2c811ad342c2b14c5709ae7a33ac.pdf?index=true"}, {"vendor": "Noodles Etc.", "cuisine": "Pan-Asian", "address": "1333 E 57th St", "phone": "773-684-2801", "status": "Public catering listing", "notes": "Ordering-platform delivery minimum $200 and $30+ fee. Direct site https://noodlesetc.com/", "site": "https://noodlesetc.com/", "order": "https://www.ezcater.com/catering/noodles-etc-3", "pdf": null}, {"vendor": "Siam Thai Cuisine", "cuisine": "Thai", "address": "1639 E 55th St", "phone": "773-324-9296", "status": "Quote required", "notes": "Ask Hyde Park location for entrée portions or trays. Confirm vegetarian sauce and allergens.", "site": "https://chicagosiamthai.com/", "order": null, "pdf": null}, {"vendor": "Kikuya Japanese Restaurant", "cuisine": "Japanese and sushi", "address": "1601 E 55th St", "phone": "773-667-3727", "status": "Quote required", "notes": "Supplied website did not yield usable pricing. Call for teriyaki meal or sushi-tray quote.", "site": "https://www.kikuyaonline.com/", "order": "https://www.opentable.com/r/kikuya-japanese-restaurant-chicago", "pdf": null}, {"vendor": "Piccolo Mondo Café", "cuisine": "Italian", "address": "1642 E 56th St", "phone": "773-643-1106", "status": "Published retail menu", "notes": "Pasta price is per entrée. Vendor’s private-party menu has separate room terms. Confirm bulk takeout.", "site": "https://piccolomondo.com/-food-menu?destination=food_menu", "order": null, "pdf": null}, {"vendor": "Shinju Sushi", "cuisine": "Japanese and sushi", "address": "1375 E 53rd St", "phone": "773-966-6669", "status": "Quote required", "notes": "Supplied site returned an error. Confirm piece count, tray pricing and cooked or vegetarian options.", "site": "https://www.shinjusushichicago.com/", "order": "https://order.online/store/shinju-sushi-25840784", "pdf": null}, {"vendor": "Porkchop", "cuisine": "BBQ and Southern", "address": "1516 E Harper Ct", "phone": "773-493-9333", "status": "Listed address vacated", "notes": "Harper Court location moved. Use active-brand site only to confirm a current servicing location: https://porkchopbbq.com/", "site": "https://porkchopbbq.com/", "order": "https://hpherald.newsbank.com/doc/news/1752BDE3CC8B7CA0/?=&page=588&pdate=2019-05-08&pub%255B0%255D=HPHWC", "pdf": null}, {"vendor": "Plein Air Café", "cuisine": "Coffee and sandwiches", "address": "5751 S Woodlawn Ave", "phone": "773-966-7531", "status": "Quote required", "notes": "Vendor’s Square page is menu-only. Ask for one pastry per person and a coffee quote with cup yield.", "site": "https://www.pleinaircafe.co/", "order": "https://plein-air-cafe.square.site/", "pdf": null}, {"vendor": "La Petite Folie", "cuisine": "French", "address": "1504 E 55th St", "phone": "773-493-1394", "status": "Closed", "notes": "Reported closed. Excluded from ordering.", "site": "http://lapetitefolie.com/", "order": "https://chicago.eater.com/2022/8/8/23296592/chicago-restaurant-closings-summer-fall-2022", "pdf": null}, {"vendor": "Nathan’s Taste of Jamaica", "cuisine": "Jamaican and seafood", "address": "1372 E 53rd St", "phone": "773-288-5353", "status": "Verify current operator", "notes": "Same address and phone appear under Nathan’s Chicago Style. Page says closed for online orders. Confirm identity and service.", "site": "https://www.nathanschicagostyle.com/locations/nathans-chicago-style", "order": null, "pdf": null}, {"vendor": "Café 53", "cuisine": "Sandwiches and café", "address": "1369 E 53rd St", "phone": "773-493-1000", "status": "Public catering listing", "notes": "Catering ordering menu. Vendor describes its menu as halal: https://www.cafe-53.com/gallery", "site": "https://www.cafe-53.com/gallery", "order": "https://www.chownow.com/order/16661/locations/23696", "pdf": null}, {"vendor": "Yusho", "cuisine": "Japanese", "address": "1301 E 53rd St", "phone": "773-643-1652", "status": "Closed", "notes": "Hyde Park location closed. Excluded from ordering.", "site": "http://yushohydepark.com/", "order": "https://chicago.eater.com/venue/4576/yusho", "pdf": null}]}
+;
+const $ = id => document.getElementById(id);
+const money = x => '$' + x.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+let sortKey = 'perhead', sortDir = 1;
+
+const cuisines = [...new Set(DATA.packages.map(p => p.cuisine))].sort();
+for (const c of cuisines) $('cuisine').insertAdjacentHTML('beforeend', `<option>${esc(c)}</option>`);
+
+function calc(p, n) {
+  const qty = Math.max(p.min, Math.ceil(n / p.serves));
+  const total = Math.round(qty * p.price * 100) / 100;
+  return {qty, portions: qty * p.serves, total, perhead: total / n};
+}
+
+function render() {
+  const raw = $('n').value.trim(), n = Number(raw);
+  const ok = raw !== '' && Number.isInteger(n) && n >= 1 && n <= 2000;
+  $('err').textContent = ok ? '' : 'Enter a whole number from 1 to 2,000.';
+  if (!ok) { $('rows').innerHTML = ''; $('stats').innerHTML = ''; return; }
+  const cu = $('cuisine').value;
+  let rows = DATA.packages.filter(p => !cu || p.cuisine === cu).map(p => ({...p, ...calc(p, n)}));
+  rows.sort((a, b) => sortKey === 'vendor'
+    ? a.vendor.localeCompare(b.vendor) * sortDir
+    : (a[sortKey] - b[sortKey]) * sortDir);
+  document.querySelectorAll('th.sort .arrow').forEach(s => s.textContent = '');
+  const th = document.querySelector(`th.sort[data-k="${sortKey}"] .arrow`);
+  if (th) th.textContent = sortDir === 1 ? '▲' : '▼';
+
+  $('rows').innerHTML = rows.map(r => {
+    const cls = r.perhead <= 12 ? 'lo' : r.perhead <= 20 ? 'mid' : 'hi';
+    const minNote = r.qty === r.min && r.min > 1 && Math.ceil(n / r.serves) < r.min ? ` <span class="sub">Vendor minimum of ${r.min} applies</span>` : '';
+    return `<tr>
+      <td><span class="pkg">${esc(r.vendor)}</span><span class="sub">${esc(r.order)} · ${esc(r.cuisine)}</span>
+        <details><summary>Notes</summary><span class="sub">${esc(r.note)} ${money(r.price)} per ${esc(r.unit.replace(/s$/, ''))}, serves ${r.serves}. <a href="${esc(r.src)}" target="_blank" rel="noopener">Menu source</a></span></details></td>
+      <td class="num">${r.qty} ${esc(r.unit)}${minNote}</td>
+      <td class="num hide-sm">${r.portions}</td>
+      <td class="num big">${money(r.total)}</td>
+      <td class="num"><span class="perhead ${cls}">${money(r.perhead)}</span></td>
+    </tr>`;
+  }).join('') || '<tr><td colspan="5">No packages match.</td></tr>';
+
+  if (rows.length) {
+    const ph = rows.map(r => r.perhead).sort((a, b) => a - b);
+    const cheapest = rows.reduce((a, b) => a.total <= b.total ? a : b);
+    const med = ph.length % 2 ? ph[(ph.length - 1) / 2] : (ph[ph.length / 2 - 1] + ph[ph.length / 2]) / 2;
+    $('stats').innerHTML = `
+      <div class="stat"><b>${money(cheapest.total)}</b><span>Lowest food subtotal<br>${esc(cheapest.vendor)}</span></div>
+      <div class="stat"><b>${money(med)}</b><span>Median cost per attendee<br>across ${rows.length} packages</span></div>
+      <div class="stat"><b>${money(ph[0])}–${money(ph[ph.length - 1])}</b><span>Range per attendee<br>for ${n} attendees</span></div>`;
+  }
+}
+
+function status(s) {
+  if (/^Published|^Public/.test(s)) return ['b-ok', 'Prices published'];
+  if (/Quote|Starting price/.test(s)) return ['b-quote', 'Quote needed'];
+  return ['b-check', s];
+}
+function renderVendors() {
+  const q = $('q').value.trim().toLowerCase(), priced = $('pricedonly').checked;
+  const open = DATA.vendors.filter(v => v.status !== 'Closed');
+  const list = open.filter(v => (!q || (v.vendor + ' ' + v.cuisine).toLowerCase().includes(q)) && (!priced || status(v.status)[0] === 'b-ok'));
+  $('vrows').innerHTML = list.map(v => {
+    const [cls, label] = status(v.status);
+    const links = [v.site && `<a href="${esc(v.site)}" target="_blank" rel="noopener">Website</a>`,
+                   v.order && `<a href="${esc(v.order)}" target="_blank" rel="noopener">Ordering page</a>`,
+                   v.pdf && `<a href="${esc(v.pdf)}" target="_blank" rel="noopener">PDF menu</a>`].filter(Boolean).join(' · ');
+    return `<tr><td><span class="pkg">${esc(v.vendor)}</span><span class="sub">${esc(v.cuisine)}</span>
+      <details><summary>Ordering notes</summary><span class="sub">${esc(v.notes)}<br>${links}</span></details></td>
+      <td><span class="badge ${cls}">${esc(label)}</span></td>
+      <td class="hide-sm">${esc(v.address)}</td>
+      <td style="white-space:nowrap"><a href="tel:${esc(v.phone.replace(/\D/g, ''))}">${esc(v.phone)}</a></td></tr>`;
+  }).join('') || '<tr><td colspan="4">No vendors match.</td></tr>';
+  const closed = DATA.vendors.filter(v => v.status === 'Closed').map(v => v.vendor);
+  $('closednote').textContent = closed.length ? `Not listed because they have closed: ${closed.join(', ')}.` : '';
+}
+
+$('n').addEventListener('input', render);
+$('cuisine').addEventListener('change', render);
+$('sortsel').addEventListener('change', e => { sortKey = e.target.value; sortDir = 1; render(); });
+document.querySelectorAll('th.sort').forEach(th => th.addEventListener('click', () => {
+  const k = th.dataset.k;
+  sortDir = k === sortKey ? -sortDir : 1; sortKey = k;
+  $('sortsel').value = k; render();
+}));
+$('q').addEventListener('input', renderVendors);
+$('pricedonly').addEventListener('change', renderVendors);
+render(); renderVendors();
+</script>
+</body>
+</html>
