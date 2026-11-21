@@ -292,6 +292,8 @@ There are three ways to review requests your HSO has already submitted:
 
 Planning food for an event? The **[HSO Food Cost Calculator](food-calculator.html)** estimates the cost of 15 Hyde Park catering packages for your headcount, and lists vendor contacts, ordering status and how to pay vendors.
 
+**Ordering Domino's?** Call the store to place the order instead of ordering online, and tell them it is a tax-exempt University of Chicago order. Have the University's Illinois sales tax exemption certificate ready. It is on the [HSO Resources Canvas site](https://canvas.uchicago.edu/courses/28742/modules) under **Financial Support** (*2024–2029 IL Sales Tax Exemption Certificate*). Check that the receipt shows $0 tax before you pay.
+
 ### Suggested Vendors
 
 Please visit the direct payments page for more information on payments to vendors.
