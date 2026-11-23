@@ -81,5 +81,6 @@ table {
   padding: 12px 16px;
   margin: 12px 0 16px;
   font-size: 15px;
+  overflow-x: auto;
 }
 .formula p { margin: 0; }
