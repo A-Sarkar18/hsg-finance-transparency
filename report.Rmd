@@ -91,7 +91,7 @@ ex_flex <- flex_pool * ex_score * ex_elig / flex_sum
 
 <div class="formula">
 $$
-\text{Your flexible share} \;=\; \text{Flexible pool} \times \frac{\text{Your committee score} \times \text{Your eligible request}}{\text{Sum of (committee score} \times \text{eligible request) for all HSOs}}
+\text{Your flexible share} \;=\; \text{Flexible pool (\$`r format(flex_pool, big.mark = ",")`)} \times \frac{\text{Your committee score} \times \text{Your eligible request}}{\text{Sum of (committee score} \times \text{eligible request) for all HSOs}}
 $$
 </div>
 
