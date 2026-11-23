@@ -90,7 +90,11 @@ ex_flex <- flex_pool * ex_score * ex_elig / flex_sum
 ```
 
 <div class="formula">
-**Flexible share** = Flexible pool × (HSO's committee score × HSO's eligible request) ÷ (sum of committee score × eligible request for every HSO that applied)
+$$
+\text{Flexible share}_i \;=\; \text{Flexible pool} \times \frac{S_i \times E_i}{\displaystyle\sum_{j=1}^{N} S_j \times E_j}
+$$
+
+where $S_i$ is your HSO's committee score, $E_i$ is your HSO's eligible request, and the sum in the denominator runs over all $N$ HSOs that applied.
 </div>
 
 What this means in practice:
