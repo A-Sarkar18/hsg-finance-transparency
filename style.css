@@ -74,3 +74,12 @@ table {
   color: #6b6b6b;
   font-size: 13px;
 }
+
+.formula {
+  background: #f7f1f1;
+  border-left: 4px solid #800000;
+  padding: 12px 16px;
+  margin: 12px 0 16px;
+  font-size: 15px;
+}
+.formula p { margin: 0; }

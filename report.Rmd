@@ -80,6 +80,27 @@ Every allocation has two parts:
 
 **Rollover** is each HSO's HarrisHub "Available" balance, and it counts toward the HSO's events. An HSO can set part of it aside as an earmark when the money is restricted by a sponsor, donor or grant, committed under a signed contract, or saved for a specific event later in the academic year that the HSO itemizes with its cost. General savings don't count.
 
+### The flexible share formula
+
+```{r flex-calc, include = FALSE}
+flex_sum <- sum(a$committee_score * a$eligible_request, na.rm = TRUE)
+ex_score <- 3
+ex_elig <- 1000
+ex_flex <- flex_pool * ex_score * ex_elig / flex_sum
+```
+
+<div class="formula">
+**Flexible share** = Flexible pool × (HSO's committee score × HSO's eligible request) ÷ (sum of committee score × eligible request for every HSO that applied)
+</div>
+
+What this means in practice:
+
+* **The flexible share is the part your HSO can influence.** The flat share is the same for every on-time HSO. The flexible share depends on two things your application shapes: your **eligible request** and your **committee score**.
+* **Your committee score is an average, not one person's view.** Each reviewer scores your HSO, and the automatic score from your application counts as one more reviewer. The committee score is the average of all of them. A reviewer who belongs to your HSO is recused and left out of the average.
+* **Eligible request counts, not total request.** Food spending above the limits is taken out first, so keeping food within the limits keeps more of your request in the formula.
+* **Shares are relative.** The flexible pool is fixed at `r dollars(flex_pool)`, so each HSO's share depends on every other HSO's score and request too. This quarter, the sum of committee score × eligible request across all HSOs was `r format(round(flex_sum), big.mark = ",")`.
+* **Example:** an HSO with a committee score of `r ex_score` and an eligible request of `r dollars(ex_elig)` would get `r dollars(flex_pool)` × (`r ex_score` × `r format(ex_elig, big.mark = ",")`) ÷ `r format(round(flex_sum), big.mark = ",")` ≈ **`r dollars(ex_flex)`** in flexible share, plus the `r dollars(flat_each)` flat share.
+
 See [METHODOLOGY.md](https://github.com/A-Sarkar18/hsg-finance-transparency/blob/main/METHODOLOGY.md) for a summary of the rules and formulas, and the [policy documents](https://github.com/A-Sarkar18/hsg-finance-transparency/tree/main/policy) for the full Fall 2026 policy.
 
 No HSO can receive more than its flat share plus its eligible request, and allocations are rounded to the nearest $10. Any change the committee makes by hand is marked with a short note in the table at the end.
@@ -168,7 +189,7 @@ if (file.exists(notes_file)) cat(readLines(notes_file), sep = "\n")
 #### How is my allocation calculated?
 
 * **Equal base share:** 25% of the budget is split equally among every HSO that applied on time (`r dollars(flat_each)` each this quarter).
-* **Shared pool:** the other 75% is split in proportion to **committee score × eligible request**.
+* **Shared pool:** the other 75% is split in proportion to **committee score × eligible request**. See [the flexible share formula](#the-flexible-share-formula) for the full formula and an example.
 * **Eligible request** is what the HSO asked for, minus food spending above the limits described in [How funding works](#how-funding-works).
 * **Upper limit and rounding:** no HSO gets more than its base share plus its eligible request, and amounts are rounded to the nearest $10.
 
